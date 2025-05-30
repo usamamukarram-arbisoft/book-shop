@@ -1,0 +1,21 @@
+.card-width{
+width: 18rem;
+margin: 3px 5px;
+background-color: #fbf2f2;
+}
+.card img{
+    height: 200px;
+}
+
+.checkout a{
+    margin: 2px 6px;
+    background-color: #5619199d;
+    border: 1px solid #561919b8;
+
+}
+
+.checkout a:hover{
+    background-color: #561919b8;
+    outline: none;
+    border: 1px solid #561919b8;
+}
