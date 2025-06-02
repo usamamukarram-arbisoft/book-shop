@@ -1,6 +1,12 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./ProductCard.css";
 function ProductCard({ product }: any) {
+  const navigate = useNavigate();
+
+  const handleGoToDetails = () => {
+    navigate(`/books/${product.bookId}`, { state: { product } });
+  };
   return (
     <div>
       <div className="card card-width">
@@ -9,7 +15,7 @@ function ProductCard({ product }: any) {
           <h5 className="card-title"> {product.title}</h5>
           <p className="card-text">{product.description}</p>
           <div className="checkout">
-            <a href="#" className="btn btn-primary">
+            <a className="btn btn-primary" onClick={handleGoToDetails}>
               View Details
             </a>
             <a href="#" className="btn btn-primary">

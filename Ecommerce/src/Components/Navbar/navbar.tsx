@@ -15,7 +15,7 @@ function Navbar() {
       </li>
       <li className="nav-item">
         <a className="nav-link" href="#">
-          <i className="fa-solid fa-cart-plus"></i>
+          <i className="bi bi-cart-plus"></i>
         </a>
       </li>
     </ul>

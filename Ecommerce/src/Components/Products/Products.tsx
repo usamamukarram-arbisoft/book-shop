@@ -4,6 +4,7 @@ import "./products.css";
 function Products() {
   const sampleProducts = [
     {
+      bookId: 1,
       title: "The Goldfinch",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Margaret Atwood, Neil Gaiman",
@@ -14,6 +15,7 @@ function Products() {
       pages: 330,
     },
     {
+      bookId: 2,
       title: "Talking to Strangers",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.R.R. Tolkien",
@@ -24,6 +26,7 @@ function Products() {
       pages: 636,
     },
     {
+      bookId: 3,
       title: "The Light We Carry",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Dan Brown, Isaac Asimov",
@@ -34,6 +37,7 @@ function Products() {
       pages: 354,
     },
     {
+      bookId: 4,
       title: "Big Magic",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.R.R. Tolkien, Neil Gaiman",
@@ -44,6 +48,7 @@ function Products() {
       pages: 487,
     },
     {
+      bookId: 5,
       title: "It Ends with Us",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.K. Rowling",
@@ -54,6 +59,7 @@ function Products() {
       pages: 882,
     },
     {
+      bookId: 6,
       title: "Beach Read",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Neil Gaiman, Dan Brown",
@@ -64,6 +70,7 @@ function Products() {
       pages: 899,
     },
     {
+      bookId: 7,
       title: "Malibu Rising",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Dan Brown",
@@ -74,6 +81,7 @@ function Products() {
       pages: 619,
     },
     {
+      bookId: 8,
       title: "Sapiens",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Agatha Christie, Margaret Atwood",
@@ -84,6 +92,7 @@ function Products() {
       pages: 847,
     },
     {
+      bookId: 9,
       title: "Mexican Gothic",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Neil Gaiman, Margaret Atwood",
@@ -94,6 +103,7 @@ function Products() {
       pages: 713,
     },
     {
+      bookId: 10,
       title: "The Guest List",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.R.R. Tolkien",
@@ -104,6 +114,7 @@ function Products() {
       pages: 452,
     },
     {
+      bookId: 11,
       title: "Essentialism",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Margaret Atwood, Haruki Murakami",
@@ -114,6 +125,7 @@ function Products() {
       pages: 175,
     },
     {
+      bookId: 12,
       title: "Born a Crime",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Agatha Christie",
@@ -124,6 +136,7 @@ function Products() {
       pages: 678,
     },
     {
+      bookId: 13,
       title: "Man's Search for Meaning",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "George R.R. Martin",
@@ -134,6 +147,7 @@ function Products() {
       pages: 266,
     },
     {
+      bookId: 14,
       title: "Educated",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Haruki Murakami",
@@ -144,6 +158,7 @@ function Products() {
       pages: 781,
     },
     {
+      bookId: 15,
       title: "Start with Why",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.R.R. Tolkien",
@@ -154,6 +169,7 @@ function Products() {
       pages: 766,
     },
     {
+      bookId: 16,
       title: "The War of Art",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Dan Brown, Stephen King",
@@ -164,6 +180,7 @@ function Products() {
       pages: 443,
     },
     {
+      bookId: 17,
       title: "The Subtle Art of Not Giving a F*ck",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Isaac Asimov, Haruki Murakami",
@@ -174,6 +191,7 @@ function Products() {
       pages: 765,
     },
     {
+      bookId: 18,
       title: "Daisy Jones & The Six",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Agatha Christie, J.K. Rowling",
@@ -184,6 +202,7 @@ function Products() {
       pages: 207,
     },
     {
+      bookId: 19,
       title: "Book Lovers",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Agatha Christie",
@@ -194,6 +213,7 @@ function Products() {
       pages: 585,
     },
     {
+      bookId: 20,
       title: "David and Goliath",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.R.R. Tolkien",
@@ -204,6 +224,7 @@ function Products() {
       pages: 773,
     },
     {
+      bookId: 21,
       title: "Verity",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "George R.R. Martin",
@@ -214,6 +235,7 @@ function Products() {
       pages: 686,
     },
     {
+      bookId: 22,
       title: "Ugly Love",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.R.R. Tolkien, Dan Brown",
@@ -224,6 +246,7 @@ function Products() {
       pages: 793,
     },
     {
+      bookId: 23,
       title: "The Tipping Point",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Haruki Murakami",
@@ -234,6 +257,7 @@ function Products() {
       pages: 624,
     },
     {
+      bookId: 24,
       title: "November 9",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Neil Gaiman, Brandon Sanderson",
@@ -244,6 +268,7 @@ function Products() {
       pages: 842,
     },
     {
+      bookId: 25,
       title: "The Book Thief",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.R.R. Tolkien",
@@ -254,6 +279,7 @@ function Products() {
       pages: 883,
     },
     {
+      bookId: 26,
       title: "Outliers",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Stephen King",
@@ -264,6 +290,7 @@ function Products() {
       pages: 283,
     },
     {
+      bookId: 27,
       title: "The Midnight Library",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Dan Brown",
@@ -274,6 +301,7 @@ function Products() {
       pages: 506,
     },
     {
+      bookId: 28,
       title: "Reminders of Him",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.K. Rowling",
@@ -284,6 +312,7 @@ function Products() {
       pages: 444,
     },
     {
+      bookId: 29,
       title: "Wild",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Stephen King, Neil Gaiman",
@@ -294,6 +323,7 @@ function Products() {
       pages: 317,
     },
     {
+      bookId: 30,
       title: "Red Queen",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "George R.R. Martin",
@@ -304,6 +334,7 @@ function Products() {
       pages: 198,
     },
     {
+      bookId: 31,
       title: "Drive",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.R.R. Tolkien, Isaac Asimov",
@@ -314,6 +345,7 @@ function Products() {
       pages: 296,
     },
     {
+      bookId: 32,
       title: "The 5 Love Languages",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Agatha Christie, Brandon Sanderson",
@@ -324,6 +356,7 @@ function Products() {
       pages: 876,
     },
     {
+      bookId: 33,
       title: "Little Fires Everywhere",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.K. Rowling, Stephen King",
@@ -334,6 +367,7 @@ function Products() {
       pages: 346,
     },
     {
+      bookId: 34,
       title: "Think Like a Monk",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Isaac Asimov, Brandon Sanderson",
@@ -344,6 +378,7 @@ function Products() {
       pages: 171,
     },
     {
+      bookId: 35,
       title: "Deep Work",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.K. Rowling, Neil Gaiman",
@@ -354,6 +389,7 @@ function Products() {
       pages: 860,
     },
     {
+      bookId: 36,
       title: "Normal People",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Margaret Atwood, J.K. Rowling",
@@ -364,6 +400,7 @@ function Products() {
       pages: 794,
     },
     {
+      bookId: 37,
       title: "The Seven Husbands of Evelyn Hugo",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Agatha Christie",
@@ -374,6 +411,7 @@ function Products() {
       pages: 157,
     },
     {
+      bookId: 38,
       title: "The Paris Library",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Neil Gaiman, Haruki Murakami",
@@ -384,6 +422,7 @@ function Products() {
       pages: 108,
     },
     {
+      bookId: 39,
       title: "People We Meet on Vacation",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Margaret Atwood",
@@ -394,6 +433,7 @@ function Products() {
       pages: 729,
     },
     {
+      bookId: 40,
       title: "Grit",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.K. Rowling",
@@ -404,6 +444,7 @@ function Products() {
       pages: 759,
     },
     {
+      bookId: 41,
       title: "The Song of Achilles",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.R.R. Tolkien, George R.R. Martin",
@@ -414,6 +455,7 @@ function Products() {
       pages: 874,
     },
     {
+      bookId: 42,
       title: "A Man Called Ove",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Stephen King, Dan Brown",
@@ -424,6 +466,7 @@ function Products() {
       pages: 109,
     },
     {
+      bookId: 43,
       title: "Anxious People",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Isaac Asimov, George R.R. Martin",
@@ -434,6 +477,7 @@ function Products() {
       pages: 898,
     },
     {
+      bookId: 44,
       title: "Becoming",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Neil Gaiman, Haruki Murakami",
@@ -444,6 +488,7 @@ function Products() {
       pages: 553,
     },
     {
+      bookId: 45,
       title: "Shatter Me",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.R.R. Tolkien, Isaac Asimov",
@@ -454,6 +499,7 @@ function Products() {
       pages: 290,
     },
     {
+      bookId: 46,
       title: "Daring Greatly",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.R.R. Tolkien, Isaac Asimov",
@@ -464,6 +510,7 @@ function Products() {
       pages: 193,
     },
     {
+      bookId: 47,
       title: "The Chain",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.R.R. Tolkien, George R.R. Martin",
@@ -474,6 +521,7 @@ function Products() {
       pages: 472,
     },
     {
+      bookId: 48,
       title: "The Invisible Life of Addie LaRue",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Neil Gaiman, J.K. Rowling",
@@ -484,6 +532,7 @@ function Products() {
       pages: 797,
     },
     {
+      bookId: 49,
       title: "Circe",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.K. Rowling",
@@ -494,6 +543,7 @@ function Products() {
       pages: 659,
     },
     {
+      bookId: 50,
       title: "Where the Crawdads Sing",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Haruki Murakami",
@@ -504,6 +554,7 @@ function Products() {
       pages: 324,
     },
     {
+      bookId: 51,
       title: "The Alchemist",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Brandon Sanderson, Agatha Christie",
@@ -514,6 +565,7 @@ function Products() {
       pages: 192,
     },
     {
+      bookId: 52,
       title: "Blink",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Haruki Murakami, Neil Gaiman",
@@ -524,6 +576,7 @@ function Products() {
       pages: 668,
     },
     {
+      bookId: 53,
       title: "Before We Were Strangers",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Haruki Murakami, Isaac Asimov",
@@ -534,6 +587,7 @@ function Products() {
       pages: 733,
     },
     {
+      bookId: 54,
       title: "Atomic Habits",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Margaret Atwood",
@@ -544,6 +598,7 @@ function Products() {
       pages: 185,
     },
     {
+      bookId: 55,
       title: "Can't Hurt Me",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Agatha Christie, Brandon Sanderson",
@@ -554,6 +609,7 @@ function Products() {
       pages: 582,
     },
     {
+      bookId: 56,
       title: "Educated",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Agatha Christie",
@@ -564,6 +620,7 @@ function Products() {
       pages: 513,
     },
     {
+      bookId: 57,
       title: "The Glass Castle",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Stephen King",
@@ -574,6 +631,7 @@ function Products() {
       pages: 350,
     },
     {
+      bookId: 58,
       title: "Project Hail Mary",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Neil Gaiman, Brandon Sanderson",
@@ -584,6 +642,7 @@ function Products() {
       pages: 868,
     },
     {
+      bookId: 59,
       title: "The Night Circus",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Neil Gaiman",
@@ -594,6 +653,7 @@ function Products() {
       pages: 717,
     },
     {
+      bookId: 60,
       title: "The Last Thing He Told Me",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.K. Rowling, Dan Brown",
@@ -604,6 +664,7 @@ function Products() {
       pages: 164,
     },
     {
+      bookId: 61,
       title: "Hillbilly Elegy",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.K. Rowling",
@@ -614,6 +675,7 @@ function Products() {
       pages: 165,
     },
     {
+      bookId: 62,
       title: "The Paper Palace",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Isaac Asimov, Agatha Christie",
@@ -624,6 +686,7 @@ function Products() {
       pages: 253,
     },
     {
+      bookId: 63,
       title: "Steal Like an Artist",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Agatha Christie",
@@ -634,6 +697,7 @@ function Products() {
       pages: 452,
     },
     {
+      bookId: 64,
       title: "The Vanishing Half",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Neil Gaiman",
@@ -644,6 +708,7 @@ function Products() {
       pages: 452,
     },
     {
+      bookId: 65,
       title: "Homo Deus",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Neil Gaiman",
@@ -654,6 +719,7 @@ function Products() {
       pages: 307,
     },
     {
+      bookId: 66,
       title: "21 Lessons for the 21st Century",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Dan Brown, George R.R. Martin",
@@ -664,6 +730,7 @@ function Products() {
       pages: 264,
     },
     {
+      bookId: 67,
       title: "The Shadow of the Wind",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Isaac Asimov, Neil Gaiman",
@@ -674,6 +741,7 @@ function Products() {
       pages: 529,
     },
     {
+      bookId: 68,
       title: "The Four Agreements",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Haruki Murakami",
@@ -684,6 +752,7 @@ function Products() {
       pages: 894,
     },
     {
+      bookId: 69,
       title: "Greenlights",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Dan Brown",
@@ -694,6 +763,7 @@ function Products() {
       pages: 197,
     },
     {
+      bookId: 70,
       title: "The House in the Cerulean Sea",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.K. Rowling, Margaret Atwood",
@@ -704,6 +774,7 @@ function Products() {
       pages: 537,
     },
     {
+      bookId: 71,
       title: "The Love Hypothesis",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Isaac Asimov",
@@ -714,6 +785,7 @@ function Products() {
       pages: 255,
     },
     {
+      bookId: 72,
       title: "Quiet",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Agatha Christie",
@@ -724,6 +796,7 @@ function Products() {
       pages: 785,
     },
     {
+      bookId: 73,
       title: "Untamed",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Brandon Sanderson, J.R.R. Tolkien",
@@ -734,6 +807,7 @@ function Products() {
       pages: 336,
     },
     {
+      bookId: 74,
       title: "The Silent Patient",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Margaret Atwood, J.K. Rowling",
@@ -744,6 +818,7 @@ function Products() {
       pages: 703,
     },
     {
+      bookId: 75,
       title: "The Power of Now",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Isaac Asimov",
@@ -754,6 +829,7 @@ function Products() {
       pages: 789,
     },
     {
+      bookId: 76,
       title: "The Goldfinch",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Brandon Sanderson",
@@ -764,6 +840,7 @@ function Products() {
       pages: 186,
     },
     {
+      bookId: 77,
       title: "Talking to Strangers",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Brandon Sanderson",
@@ -774,6 +851,7 @@ function Products() {
       pages: 880,
     },
     {
+      bookId: 78,
       title: "The Light We Carry",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Neil Gaiman, Isaac Asimov",
@@ -784,6 +862,7 @@ function Products() {
       pages: 750,
     },
     {
+      bookId: 79,
       title: "Big Magic",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Margaret Atwood",
@@ -794,6 +873,7 @@ function Products() {
       pages: 874,
     },
     {
+      bookId: 80,
       title: "It Ends with Us",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Margaret Atwood, Dan Brown",
@@ -804,6 +884,7 @@ function Products() {
       pages: 819,
     },
     {
+      bookId: 81,
       title: "Beach Read",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Margaret Atwood",
@@ -814,6 +895,7 @@ function Products() {
       pages: 456,
     },
     {
+      bookId: 82,
       title: "Malibu Rising",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Stephen King",
@@ -824,6 +906,7 @@ function Products() {
       pages: 848,
     },
     {
+      bookId: 83,
       title: "Sapiens",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Haruki Murakami",
@@ -834,6 +917,7 @@ function Products() {
       pages: 572,
     },
     {
+      bookId: 84,
       title: "Mexican Gothic",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Neil Gaiman",
@@ -844,6 +928,7 @@ function Products() {
       pages: 187,
     },
     {
+      bookId: 85,
       title: "The Guest List",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Haruki Murakami, Brandon Sanderson",
@@ -854,6 +939,7 @@ function Products() {
       pages: 465,
     },
     {
+      bookId: 86,
       title: "Essentialism",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.K. Rowling",
@@ -864,6 +950,7 @@ function Products() {
       pages: 272,
     },
     {
+      bookId: 87,
       title: "Born a Crime",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Haruki Murakami",
@@ -874,6 +961,7 @@ function Products() {
       pages: 557,
     },
     {
+      bookId: 88,
       title: "Man's Search for Meaning",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Brandon Sanderson",
@@ -884,6 +972,7 @@ function Products() {
       pages: 181,
     },
     {
+      bookId: 89,
       title: "Educated",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Agatha Christie",
@@ -894,6 +983,7 @@ function Products() {
       pages: 399,
     },
     {
+      bookId: 90,
       title: "Start with Why",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "George R.R. Martin, Stephen King",
@@ -904,6 +994,7 @@ function Products() {
       pages: 556,
     },
     {
+      bookId: 91,
       title: "The War of Art",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.R.R. Tolkien",
@@ -914,6 +1005,7 @@ function Products() {
       pages: 235,
     },
     {
+      bookId: 92,
       title: "The Subtle Art of Not Giving a F*ck",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Isaac Asimov",
@@ -924,6 +1016,7 @@ function Products() {
       pages: 688,
     },
     {
+      bookId: 93,
       title: "Daisy Jones & The Six",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Isaac Asimov",
@@ -934,6 +1027,7 @@ function Products() {
       pages: 708,
     },
     {
+      bookId: 94,
       title: "Book Lovers",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Margaret Atwood",
@@ -944,6 +1038,7 @@ function Products() {
       pages: 459,
     },
     {
+      bookId: 95,
       title: "David and Goliath",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Agatha Christie",
@@ -954,6 +1049,7 @@ function Products() {
       pages: 665,
     },
     {
+      bookId: 96,
       title: "Verity",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Neil Gaiman",
@@ -964,6 +1060,7 @@ function Products() {
       pages: 268,
     },
     {
+      bookId: 97,
       title: "Ugly Love",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.K. Rowling",
@@ -974,6 +1071,7 @@ function Products() {
       pages: 858,
     },
     {
+      bookId: 99,
       title: "The Tipping Point",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Isaac Asimov, Agatha Christie",
@@ -984,6 +1082,7 @@ function Products() {
       pages: 698,
     },
     {
+      bookId: 108,
       title: "November 9",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Dan Brown, Neil Gaiman",
@@ -994,6 +1093,7 @@ function Products() {
       pages: 353,
     },
     {
+      bookId: 100,
       title: "The Book Thief",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Agatha Christie, Isaac Asimov",
@@ -1004,6 +1104,7 @@ function Products() {
       pages: 731,
     },
     {
+      bookId: 101,
       title: "Outliers",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "George R.R. Martin, J.K. Rowling",
@@ -1014,6 +1115,7 @@ function Products() {
       pages: 752,
     },
     {
+      bookId: 102,
       title: "The Midnight Library",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Stephen King",
@@ -1024,6 +1126,7 @@ function Products() {
       pages: 275,
     },
     {
+      bookId: 103,
       title: "Reminders of Him",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Agatha Christie",
@@ -1034,6 +1137,7 @@ function Products() {
       pages: 402,
     },
     {
+      bookId: 104,
       title: "Wild",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Stephen King, Neil Gaiman",
@@ -1044,6 +1148,7 @@ function Products() {
       pages: 707,
     },
     {
+      bookId: 105,
       title: "Red Queen",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Dan Brown, Haruki Murakami",
@@ -1054,6 +1159,7 @@ function Products() {
       pages: 460,
     },
     {
+      bookId: 107,
       title: "Drive",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "Haruki Murakami",
@@ -1064,6 +1170,7 @@ function Products() {
       pages: 310,
     },
     {
+      bookId: 106,
       title: "The 5 Love Languages",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       author: "J.K. Rowling, George R.R. Martin",
@@ -1079,7 +1186,7 @@ function Products() {
       <div className="container mt-4">
         <div className="row">
           {sampleProducts.map((product) => (
-            <div className="col-md-3 cardVisiblity" key={product.title}>
+            <div className="col-md-3 cardVisiblity" key={product.bookId}>
               <ProductCard product={product} />
             </div>
           ))}
