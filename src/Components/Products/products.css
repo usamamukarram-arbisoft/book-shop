@@ -1,3 +1,12 @@
-.cardVisiblity{
-    padding: 5px 10px
+.cardVisiblity {
+  padding: 5px 10px;
+}
+
+.pagination > li.active > a {
+  background-color: #5619199d !important;
+  border: 1px solid #561919b8 !important;
+  color: white !important;
+}
+.pagination > li > a {
+  color: black !important ;
 }

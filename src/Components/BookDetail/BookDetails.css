@@ -1,22 +1,11 @@
-.product-image {
-            max-height: 400px;
-            object-fit: cover;
-            width: 300px;
-        }
-        .thumbnail {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            cursor: pointer;
-            opacity: 0.6;
-            transition: opacity 0.3s ease;
-        }
-        .thumbnail:hover, .thumbnail.active {
-            opacity: 1;
-        }
-    .checkout a{
-    margin: 2px 6px;
-    background-color: #5619199d;
-    border: 1px solid #561919b8;
+.product-image img {
+  max-height: 400px;
+  object-fit: cover;
+  width: 300px;
+}
 
+.checkout a {
+  margin: 2px 6px;
+  background-color: #5619199d;
+  border: 1px solid #561919b8;
 }

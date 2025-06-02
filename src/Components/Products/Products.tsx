@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductCard from "../ProductCard/ProductCard";
+// import CommonFunction from ""
 import "./products.css";
+import { pagination } from "../../Utility/CommonFunction";
 function Products() {
-  const sampleProducts = [
+  const sampleProducts: any = [
     {
       bookId: 1,
       title: "The Goldfinch",
@@ -1181,17 +1183,68 @@ function Products() {
       pages: 777,
     },
   ];
+  interface Books {
+    bookId: number;
+    title: string;
+    description: string;
+    author: string;
+    category: string;
+    image_url: string;
+    available_books: number;
+    price_usd: number;
+    pages: number;
+  }
+  const itemsPerPage = 6;
+  const [currentPage, setCurrentPage] = useState(1);
+  const { currentItems, pages } = pagination<Books>(
+    sampleProducts,
+    currentPage,
+    itemsPerPage
+  );
+
+  console.log(currentItems);
+
   return (
     <>
       <div className="container mt-4">
         <div className="row">
-          {sampleProducts.map((product) => (
+          {currentItems.map((product) => (
             <div className="col-md-3 cardVisiblity" key={product.bookId}>
               <ProductCard product={product} />
             </div>
           ))}
         </div>
       </div>
+      <ul className="pagination justify-content-center mt-3">
+        <li className={`page-item ${currentPage === 1 && "disabled"}`}>
+          <a
+            className="page-link"
+            onClick={() => setCurrentPage(currentPage - 1)}
+          >
+            Previous
+          </a>
+        </li>
+
+        {[...Array(pages)].map((_, index) => (
+          <li
+            key={index}
+            className={`page-item ${currentPage === index + 1 ? "active" : ""}`}
+          >
+            <a className="page-link" onClick={() => setCurrentPage(index + 1)}>
+              {index + 1}
+            </a>
+          </li>
+        ))}
+
+        <li className={`page-item ${currentPage === pages && "disabled"}`}>
+          <a
+            className="page-link"
+            onClick={() => setCurrentPage(currentPage + 1)}
+          >
+            Next
+          </a>
+        </li>
+      </ul>
     </>
   );
 }
