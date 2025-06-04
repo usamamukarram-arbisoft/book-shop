@@ -1,28 +1,36 @@
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-// import books from '../data/books.json';
-// import { Button } from '@/components/ui/button';
+import NotFound from "../NotFound/NotFound";
+import "./BookDetails.css";
 
 const BookDetail = () => {
-  const { state } = useLocation();
+  const location = useLocation().state;
   const navigate = useNavigate();
   const handleBack = () => {
     navigate(`/`);
   };
 
-  let book = state?.product;
-
-  if (!book) return <div className="p-4">Book not found.</div>;
+  let book = location?.product;
+  if (!book) return <NotFound></NotFound>;
 
   return (
     <div className="container mt-5">
       <div className="row">
-        <div className="col-md-6 mb-4">
+        {/* <div className="col-md-6 mb-4">
           <div className="product-image"></div>
           <img
             src={book.image_url}
             alt="Product"
             className="img-fluid rounded  mb-3"
           ></img>
+        </div> */}
+        <div className="col-md-6 mb-4">
+          <div className="card img-card ">
+            <img
+              src={book.image_url}
+              className="card-img-top h-100"
+              alt="Product Image"
+            ></img>
+          </div>
         </div>
 
         <div className="col-md-6">
@@ -42,55 +50,15 @@ const BookDetail = () => {
             <strong>Description:</strong>
           </p>
           <p className="ms-3 mb-4">{book.description}</p>
-          <div className="mb-4">
-            <h5>Color:</h5>
-            <div
-              className="btn-group"
-              role="group"
-              aria-label="Color selection"
-            >
-              <input
-                type="radio"
-                className="btn-check"
-                name="color"
-                id="black"
-              ></input>
-              <label className="btn btn-outline-dark">Black</label>
-              <input
-                type="radio"
-                className="btn-check"
-                name="color"
-                id="silver"
-              ></input>
-              <label className="btn btn-outline-secondary">Silver</label>
-              <input
-                type="radio"
-                className="btn-check"
-                name="color"
-                id="blue"
-              ></input>
-              <label className="btn btn-outline-primary"> Blue</label>
-            </div>
-          </div>
+
           <div className="checkout">
-            <a className="btn btn-primary" onClick={handleBack}>
+            <a className="btn btn-primary me-5" onClick={handleBack}>
               Back
             </a>
             <a href="#" className="btn btn-primary">
               <i className="bi bi-cart-plus"></i> Add to Cart
             </a>
           </div>
-
-          <div className="mt-4">
-            <h5>Key Features:</h5>
-            <ul>
-              <li>Industry-leading noise cancellation</li>
-              <li>30-hour battery life</li>
-              <li>Touch sensor controls</li>
-              <li>Speak-to-chat technology</li>
-            </ul>
-          </div>
-          <div></div>
         </div>
       </div>
     </div>

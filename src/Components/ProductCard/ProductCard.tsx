@@ -1,38 +1,38 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./ProductCard.css";
-function ProductCard({ product }: any) {
+const ProductCard = ({ product }: any) => {
   const navigate = useNavigate();
 
   const handleGoToDetails = () => {
     navigate(`/books/${product.bookId}`, { state: { product } });
   };
   return (
-    <div>
-      <div className="card card-width">
-        <img src={product.image_url} className="card-img-top" alt="..." />
-        <div className="card-body">
-          <h5 className="card-title text-truncate"> {product.title}</h5>
-          <h6 className="card-subtitle text-truncate mb-2 text-body-secondary">
-            {product.author}
-          </h6>
-          <h6 className="card-subtitle mb-2 text-body-secondary">
-            {product.category}
-          </h6>
+    <div className="featured-product-card">
+      <img className="featured-product-image" src={product.image_url}></img>
 
-          <p className="card-text">{product.description}</p>
-          <div className="checkout">
-            <a className="btn btn-primary" onClick={handleGoToDetails}>
-              View Details
-            </a>
-            <a className="btn btn-primary" onClick={handleGoToDetails}>
-              Add to Cart
-            </a>
-          </div>
+      <div className="featured-product-details">
+        <h3 className="mb-3 text-truncate">{product.title}</h3>
+        <h6 className="card-subtitle text-truncate mb-2 text-body-secondary">
+          {product.author}
+        </h6>
+        <h6 className="card-subtitle mb-2 text-body-secondary">
+          {product.category}
+        </h6>
+        <p className="mb-3">{product.description}</p>
+        <div className="d-flex justify-content-between  checkout align-items-center">
+          <a className="btn btn-primary me-3" onClick={handleGoToDetails}>
+            View Details
+          </a>
+          <a className="btn btn-primary" onClick={handleGoToDetails}>
+            Add to Cart
+          </a>
         </div>
       </div>
     </div>
+
+    // </div>
   );
-}
+};
 
 export default ProductCard;
