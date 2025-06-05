@@ -1,10 +1,11 @@
 import React from "react";
 import "./navbar.css";
 import { Link, useLocation } from "react-router-dom";
+import { Messages } from "../../Utility/CommonMessages";
 const Navbar = () => {
   const menus = [
-    { name: "Home", link: "/" },
-    { name: "Books", link: "/books" },
+    { name: Messages.menu.home.value, link: "/" },
+    { name: Messages.menu.books.value, link: "/books" },
   ];
   const location = useLocation().pathname;
   console.log("🚀 ~ Navbar ~ location:", location);
@@ -13,7 +14,7 @@ const Navbar = () => {
       {menus.map((menu, index) => (
         <li
           className={`nav-item ${location === menu.link ? "active" : ""}`}
-          key={index}
+          key={`nav-${index}`}
         >
           <Link className="nav-link active" aria-current="page" to={menu.link}>
             {menu.name}

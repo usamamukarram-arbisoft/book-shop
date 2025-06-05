@@ -1,10 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./ProductCard.css";
-import type { Books } from "../../Types/Types";
-interface ProductCardProps {
-  product: Books;
-}
+import type { ProductCardProps } from "../../Types/Types";
+import { Messages } from "../../Utility/CommonMessages";
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const navigate = useNavigate();
@@ -27,10 +25,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <p className="mb-3">{product.description}</p>
         <div className="d-flex justify-content-between  checkout align-items-center">
           <a className="btn btn-primary me-3" onClick={handleGoToDetails}>
-            View Details
+            {Messages.productCard.ViewDetails.value}
           </a>
           <a className="btn btn-primary" onClick={handleGoToDetails}>
-            Add to Cart
+            {Messages.productCard.AddToCart.value}
           </a>
         </div>
       </div>

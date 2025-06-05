@@ -9,3 +9,12 @@ export interface Books {
   price_usd: number;
   pages: number;
 }
+
+export interface PaginationProps {
+  sampleProducts: Books[];
+  onPageChange: (updatedBooks: Books[]) => void;
+}
+
+export interface ProductCardProps {
+  product: Books;
+}
