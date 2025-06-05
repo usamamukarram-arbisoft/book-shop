@@ -8,7 +8,7 @@ interface PaginationProps {
 }
 const Pagination = ({ sampleProducts, onPageChange }: PaginationProps) => {
   const itemsPerPage = 10;
-  let [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const { currentItems, pages } = pagination<Books>(
     sampleProducts,
     currentPage,

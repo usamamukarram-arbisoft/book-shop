@@ -1,4 +1,4 @@
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import NotFound from "../NotFound/NotFound";
 import "./BookDetails.css";
 
@@ -9,7 +9,7 @@ const BookDetail = () => {
     navigate(`/`);
   };
 
-  let book = location?.product;
+  const book = location?.product;
   if (!book) return <NotFound></NotFound>;
 
   return (

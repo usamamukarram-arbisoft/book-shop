@@ -1,7 +1,12 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./ProductCard.css";
-const ProductCard = ({ product }: any) => {
+import type { Books } from "../../Types/Types";
+interface ProductCardProps {
+  product: Books;
+}
+
+const ProductCard = ({ product }: ProductCardProps) => {
   const navigate = useNavigate();
 
   const handleGoToDetails = () => {
