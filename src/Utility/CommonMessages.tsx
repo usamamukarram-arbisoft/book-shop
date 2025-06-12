@@ -1,18 +1,18 @@
 export const Messages = {
   pagination: {
-    Next: { key: ".pagination.next", value: "Next" },
-    Previous: { key: ".pagination.previous", value: "Previous" },
+    next: { key: ".pagination.next", value: "Next" },
+    previous: { key: ".pagination.previous", value: "Previous" },
   },
   productCard: {
-    AddToCart: { key: ".productCard.addToCart", value: "Add to Cart" },
-    ViewDetails: { key: ".product-card.view-details", value: "View Details" },
+    addToCart: { key: ".productCard.addToCart", value: "Add to Cart" },
+    viewDetails: { key: ".product-card.view-details", value: "View Details" },
   },
   productDetails: {
     back: { key: ".productDetails.back", value: "Back" },
     description: { key: ".productDetails.description", value: "Description" },
-    Author: { key: ".productDetails.author", value: "Author" },
-    Genre: { key: ".productDetails.genre", value: "Genre" },
-    Price: { key: ".productDetails.price", value: "Price" },
+    author: { key: ".productDetails.author", value: "Author" },
+    genre: { key: ".productDetails.genre", value: "Genre" },
+    price: { key: ".productDetails.price", value: "Price" },
   },
   notFound: {
     title: { key: ".notFound.title", value: "Oops! Page Not Found" },

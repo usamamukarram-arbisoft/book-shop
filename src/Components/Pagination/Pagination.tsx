@@ -2,14 +2,16 @@ import React, { useEffect, useState } from "react";
 import type { Books, PaginationProps } from "../../Types/Types";
 import { pagination } from "../../Utility/CommonFunction";
 import { Messages } from "../../Utility/CommonMessages";
+import { PAGINATION_CONSTANT } from "../../Utility/CommonConstants";
+import "./Pagination.css";
 
 const Pagination = ({ sampleProducts, onPageChange }: PaginationProps) => {
-  const itemsPerPage = 10;
+  const pageSize = PAGINATION_CONSTANT.ITEMS_PER_PAGE;
   const [currentPage, setCurrentPage] = useState(1);
-  const { currentItems, pages } = pagination<Books>(
+  const { currentItems, pages } = pagination(
     sampleProducts,
     currentPage,
-    itemsPerPage
+    pageSize
   );
   useEffect(() => {
     if (sampleProducts.length > 0) {
@@ -24,7 +26,7 @@ const Pagination = ({ sampleProducts, onPageChange }: PaginationProps) => {
           className="page-link"
           onClick={() => setCurrentPage(currentPage - 1)}
         >
-          {Messages.pagination.Previous.value}
+          {Messages.pagination.previous.value}
         </a>
       </li>
 
@@ -44,7 +46,7 @@ const Pagination = ({ sampleProducts, onPageChange }: PaginationProps) => {
           className="page-link"
           onClick={() => setCurrentPage(currentPage + 1)}
         >
-          {Messages.pagination.Next.value}
+          {Messages.pagination.next.value}
         </a>
       </li>
     </ul>

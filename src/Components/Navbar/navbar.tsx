@@ -8,7 +8,6 @@ const Navbar = () => {
     { name: Messages.menu.books.value, link: "/books" },
   ];
   const location = useLocation().pathname;
-  console.log("🚀 ~ Navbar ~ location:", location);
   return (
     <ul className="nav justify-content-end">
       {menus.map((menu, index) => (

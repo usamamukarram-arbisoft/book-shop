@@ -22,9 +22,7 @@ const Products = () => {
     <div className="container flex-wrap mt-4">
       <div className="row justify-content-center">
         {currentItems.map((product) => (
-          <div className="col-md-4 mb-4" key={product.bookId}>
-            <ProductCard product={product} />
-          </div>
+          <ProductCard key={product.bookId} product={product} />
         ))}
       </div>
       <Pagination

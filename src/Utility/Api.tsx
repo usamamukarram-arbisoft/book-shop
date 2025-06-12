@@ -6,6 +6,6 @@ export const fetchBooks = (): Promise<Books[]> => {
       axios.get<Books[]>("src/BooksListing.json").then((response) => {
         resolve(response.data);
       });
-    }, 4000);
+    }, 1000);
   });
 };

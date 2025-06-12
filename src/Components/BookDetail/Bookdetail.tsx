@@ -29,22 +29,21 @@ const BookDetail = () => {
         <div className="col-md-6">
           <h2 className="mb-3">{book.title}</h2>
           <h6 className=" mb-2 text-body-secondary">
-            {" "}
-            <strong>{Messages.productDetails.Author.key}: </strong>{" "}
+            <strong>{Messages.productDetails.author.value}: </strong>
             {book.author}
           </h6>
           <h6 className=" mb-2 text-body-secondary">
-            <strong>{Messages.productDetails.Genre.key}: </strong>{" "}
+            <strong>{Messages.productDetails.genre.value}: </strong>
             {book.category}
           </h6>
           <div className="mb-3">
             <span className="h4 me-2">
-              {Messages.productDetails.Price.key}:
+              {Messages.productDetails.price.value}:
             </span>
             <span className="text-muted">${book.price_usd}</span>
           </div>
           <p className="mb-1">
-            <strong>{Messages.productDetails.description.key}:</strong>
+            <strong>{Messages.productDetails.description.value}:</strong>
           </p>
           <p className="ms-3 mb-4">{book.description}</p>
 
@@ -53,8 +52,8 @@ const BookDetail = () => {
               {Messages.productDetails.back.value}
             </a>
             <a href="#" className="btn btn-primary">
-              <i className="bi bi-cart-plus"></i>{" "}
-              {Messages.productCard.AddToCart.value}
+              <i className="bi bi-cart-plus"></i>
+              {Messages.productCard.addToCart.value}
             </a>
           </div>
         </div>

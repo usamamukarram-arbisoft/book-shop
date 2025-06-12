@@ -1,5 +1,4 @@
-import React from "react";
-import "./NotFound.css"; // Assuming you have a CSS file for styling
+import "./NotFound.css";
 import { Messages } from "../../Utility/CommonMessages";
 
 const NotFound = () => {
