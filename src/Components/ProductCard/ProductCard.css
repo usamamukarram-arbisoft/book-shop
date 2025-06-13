@@ -1,0 +1,20 @@
+.featured-product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.featured-product-image {
+  width: 100%;
+  background-color: #f1f1f1;
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+}
+
+.featured-product-details {
+  padding: 20px;
+}
+.w-100 {
+  width: 100%;
+}

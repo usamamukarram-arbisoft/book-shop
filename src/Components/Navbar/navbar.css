@@ -1,0 +1,18 @@
+.nav {
+  background-color: #310c0c;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+}
+.nav-link:hover {
+  color: #929292;
+}
+
+.nav > li.active > a {
+  background-color: #492c2cfc !important;
+  border: 1px solid #56191912 !important;
+  color: white !important;
+  border-radius: 4px;
+}
