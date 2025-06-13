@@ -1,5 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
-import NotFound from "../NotFound/NotFound";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import "./BookDetails.css";
 import { Messages } from "../../Utility/CommonMessages";
 
@@ -11,7 +10,8 @@ const BookDetail = () => {
   };
 
   const book = location?.product;
-  if (!book) return <NotFound></NotFound>;
+
+  if (!book) return <Navigate to="/notfound" />;
 
   return (
     <div className="container mt-5">
