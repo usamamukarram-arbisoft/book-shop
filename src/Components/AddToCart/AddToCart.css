@@ -1,0 +1,31 @@
+.drawer {
+  width: auto !important;
+}
+.card {
+  max-width: 550px !important;
+}
+
+.btn-outline-brown {
+  --bs-btn-color: #561919b8;
+  --bs-btn-border-color: #561919b8;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #561919b8;
+  --bs-btn-hover-border-color: #561919b8;
+  --bs-btn-focus-shadow-rgb: 128, 0, 128;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #561919b8;
+  --bs-btn-active-border-color: #561919b8;
+  --bs-btn-disabled-color: #561919b8;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #561919b8;
+  --bs-gradient: none;
+}
+
+.btn-color {
+  background-color: #5619199d !important;
+  border: 1px solid #561919b8 !important;
+}
+.btn-color :hover {
+  background-color: #3d14149d !important;
+  border: 1px solid #561919b8 !important;
+}

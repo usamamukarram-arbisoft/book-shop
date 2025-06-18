@@ -8,6 +8,8 @@ export interface Books {
   available_books: number;
   price_usd: number;
   pages: number;
+  quantity: number;
+  totalPrice: number;
 }
 
 export interface PaginationProps {
@@ -17,4 +19,13 @@ export interface PaginationProps {
 
 export interface ProductCardProps {
   product: Books;
+}
+
+export interface User {
+  email: string;
+  password: string;
+}
+export interface UserState {
+  user: User;
+  isLoggedIn: boolean;
 }
