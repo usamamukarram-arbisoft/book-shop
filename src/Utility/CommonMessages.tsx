@@ -58,4 +58,11 @@ export const Messages = {
       value: "We've send the link to your inbox. Lorem ipsum dolor sit, ",
     },
   },
+  outOfStock: {
+    title: { key: "confirm.title", value: "Error" },
+    message: {
+      key: "confirm.message",
+      value: "This book is out of stock.",
+    },
+  },
 };

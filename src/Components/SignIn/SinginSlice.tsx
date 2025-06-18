@@ -2,7 +2,7 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { User, UserState } from "../../Types/Types";
 
 const initialState: UserState = {
-  user: { email: "usama@gmail.com", password: "12345" },
+  user: null,
   isLoggedIn: false,
 };
 
@@ -11,16 +11,14 @@ const SignInslice = createSlice({
   initialState,
   reducers: {
     loginUser: (state, action: PayloadAction<User>) => {
-      const { email, password } = action.payload;
-
-      if (email === state.user.email && password === state.user.password) {
-        state.isLoggedIn = true;
-      } else {
-        state.isLoggedIn = false;
-      }
+      state.user = action.payload;
+      state.isLoggedIn = true;
+    },
+    logout: (state) => {
+      state.user = null;
     },
   },
 });
 
-export const { loginUser } = SignInslice.actions;
+export const { loginUser, logout } = SignInslice.actions;
 export default SignInslice.reducer;

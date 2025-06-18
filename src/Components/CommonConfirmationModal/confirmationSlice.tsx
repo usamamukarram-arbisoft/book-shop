@@ -4,6 +4,7 @@ const initialState = {
   show: false,
   title: "",
   message: "",
+  displayBtn: false,
 };
 
 const confirmationSlice = createSlice({
@@ -11,10 +12,10 @@ const confirmationSlice = createSlice({
   initialState,
   reducers: {
     showDialog: (state, action) => {
-      console.log("🚀 ~ action:", action.payload);
       state.show = true;
       (state.title = action.payload.title),
         (state.message = action.payload.message);
+      state.displayBtn = action.payload.displayBtn;
     },
     hideDialog: (state) => {
       state.show = false;

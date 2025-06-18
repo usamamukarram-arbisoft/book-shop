@@ -9,11 +9,13 @@ type CartItem = {
 interface AddToCartState {
   item: CartItem["books"][];
   openDrawer: boolean;
+  error: string;
 }
 
 const initialState: AddToCartState = {
   item: [],
   openDrawer: false,
+  error: "",
 };
 
 const AddToCartSlice = createSlice({
@@ -26,7 +28,6 @@ const AddToCartSlice = createSlice({
         (item) => item.bookId == newItem.bookId
       );
       if (action.payload.available_books === 0) {
-        alert("This book is out of stock.");
         return;
       }
       if (existingItem) {

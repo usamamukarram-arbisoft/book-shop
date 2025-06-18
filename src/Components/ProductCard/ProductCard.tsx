@@ -5,6 +5,7 @@ import { Messages } from "../../Utility/CommonMessages";
 
 import { useDispatch } from "react-redux";
 import { addToCart } from "../AddToCart/AddtoCartslice";
+import { showDialog } from "../CommonConfirmationModal/confirmationSlice";
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const navigate = useNavigate();
@@ -14,7 +15,17 @@ const ProductCard = ({ product }: ProductCardProps) => {
     navigate(`/books/${product.bookId}`, { state: { product } });
   };
   const handleAddToCart = () => {
-    dispatch(addToCart(product));
+    if (product.available_books === 0) {
+      dispatch(
+        showDialog({
+          title: Messages.outOfStock.title.value,
+          message: Messages.outOfStock.message.value,
+          displayBtn: false,
+        })
+      );
+    } else {
+      dispatch(addToCart(product));
+    }
   };
   return (
     <>

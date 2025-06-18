@@ -12,6 +12,9 @@ const CommonConfirmation = () => {
   const openDialog = useSelector((state: RootState) => state.confirmation.show);
   const title = useSelector((state: RootState) => state.confirmation.title);
   const message = useSelector((state: RootState) => state.confirmation.message);
+  const IsDisplayBtn = useSelector(
+    (state: RootState) => state.confirmation.displayBtn
+  );
   const navigate = useNavigate();
   const confirmed = () => {
     dispatch(hideDialog());
@@ -30,19 +33,21 @@ const CommonConfirmation = () => {
         <Modal.Title>{title}</Modal.Title>
       </Modal.Header>
       <Modal.Body>{message}</Modal.Body>
-      <Modal.Footer>
-        <Button
-          variant="secondary"
-          onClick={() => {
-            dispatch(hideDialog());
-          }}
-        >
-          No
-        </Button>
-        <Button variant="primary" className="btn-color" onClick={confirmed}>
-          Yes
-        </Button>
-      </Modal.Footer>
+      {IsDisplayBtn && (
+        <Modal.Footer>
+          <Button
+            variant="secondary"
+            onClick={() => {
+              dispatch(hideDialog());
+            }}
+          >
+            No
+          </Button>
+          <Button variant="primary" className="btn-color" onClick={confirmed}>
+            Yes
+          </Button>
+        </Modal.Footer>
+      )}
     </Modal>
   );
 };

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "./SinginSlice";
 import type { RootState } from "../../Store/Store";
+import { loginRequest } from "../../Utility/Api";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -17,7 +18,9 @@ const SignIn = () => {
     }
   }, [isLoggedIn]);
   const logIn = () => {
-    dispach(loginUser({ email, password }));
+    loginRequest({ email, password }).then((user: any) => {
+      dispach(loginUser(user));
+    });
   };
 
   return (

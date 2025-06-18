@@ -29,11 +29,7 @@ const AddToCart = () => {
   const grandTotal = subtotal + shipping + tax;
   const navigate = useNavigate();
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
-  // useEffect(() => {
-  //   if (!isLoggedIn) {
-  //     navigate("/login");
-  //   }
-  // }, [isLoggedIn]);
+
   const goToCheckout = () => {
     if (!isLoggedIn) {
       navigate("/login");
@@ -44,6 +40,7 @@ const AddToCart = () => {
       showDialog({
         title: Messages.confirmDialog.title.value,
         message: Messages.confirmDialog.message.value,
+        displayBtn: true,
       })
     );
   };
