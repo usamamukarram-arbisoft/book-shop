@@ -16,3 +16,13 @@
   color: white !important;
   border-radius: 4px;
 }
+
+.icon-size {
+  font-size: 32px !important;
+}
+
+.badge-size {
+  font-size: 10px;
+  margin-top: 4px;
+  height: 18px;
+}
