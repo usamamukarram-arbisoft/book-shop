@@ -28,6 +28,7 @@ const CommonConfirmation = () => {
       onHide={() => {
         dispatch(hideDialog());
       }}
+      centered={true}
     >
       <Modal.Header closeButton>
         <Modal.Title>{title}</Modal.Title>

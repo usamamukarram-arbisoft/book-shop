@@ -12,24 +12,24 @@ import "./AddToCart.css";
 import { Messages } from "../../Utility/CommonMessages";
 import { showDialog } from "../CommonConfirmationModal/confirmationSlice";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../../Context/cartContext";
 
 const AddToCart = () => {
   const dispatch = useDispatch();
   const openDrawer = useSelector((state: RootState) => state.drawer.openDrawer);
-  const cartItems = useSelector((state: RootState) => state.drawer.item);
-  useEffect(() => {
-    // setState({ right: openDrawer });
-  }, [openDrawer]);
 
-  const subtotal = cartItems.reduce((total, item) => {
-    return total + item.totalPrice * item.quantity;
+  // const cartItems = useSelector((state: RootState) => state.drawer.item);
+
+  const { cart, increment, decrement, removeFromCart, clearCart } = useCart();
+  const subtotal = cart.reduce((total, item) => {
+    return total + item.price_usd * item.quantity;
   }, 0);
+  // const subtotal = 0;
   const shipping = Math.random() * (15 - 10) + 10;
   const tax = (subtotal * 16) / 100;
   const grandTotal = subtotal + shipping + tax;
   const navigate = useNavigate();
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
-
   const goToCheckout = () => {
     if (!isLoggedIn) {
       navigate("/login");
@@ -65,7 +65,7 @@ const AddToCart = () => {
             <div className="col-lg-8">
               <div className="card mb-4">
                 <div className="card-body">
-                  {cartItems.map((item) => (
+                  {cart.map((item) => (
                     <div key={item.bookId} className="row cart-item mb-3">
                       <div className="col-md-3">
                         <img
@@ -86,11 +86,7 @@ const AddToCart = () => {
                           <button
                             className="btn btn-outline-secondary btn-sm"
                             type="button"
-                            onClick={() =>
-                              dispatch(
-                                decrementQuantity({ bookId: item.bookId })
-                              )
-                            }
+                            onClick={() => decrement(item.bookId)}
                           >
                             -
                           </button>
@@ -104,9 +100,7 @@ const AddToCart = () => {
                             className="btn btn-outline-secondary btn-sm"
                             type="button"
                             onClick={() => {
-                              dispatch(
-                                IncrementQuantity({ bookId: item.bookId })
-                              );
+                              increment(item.bookId);
                             }}
                           >
                             +
@@ -118,9 +112,7 @@ const AddToCart = () => {
                         <button className="btn btn-sm btn-outline-danger">
                           <i
                             className="bi bi-trash"
-                            onClick={() =>
-                              dispatch(deleteItem({ bookId: item.bookId }))
-                            }
+                            onClick={() => removeFromCart(item.bookId)}
                           ></i>
                         </button>
                       </div>

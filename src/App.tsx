@@ -13,8 +13,8 @@ import Thankyou from "./Components/ThankyouPage/Thankyou";
 
 const App = () => {
   const location = useLocation().pathname;
-  const navigate = useNavigate();
-  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
+  // const navigate = useNavigate();
+  // const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
   // useEffect(() => {
   //   if (!isLoggedIn) {
   //     navigate("/login");

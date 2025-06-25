@@ -30,3 +30,11 @@ export interface UserState {
   user: User | null;
   isLoggedIn: boolean;
 }
+export interface CartContextType {
+  cart: Books[];
+  addToCart: (item: Books) => void;
+  removeFromCart: (id: number) => void;
+  increment: (id: number) => void;
+  decrement: (id: number) => void;
+  clearCart: () => void;
+}

@@ -6,9 +6,11 @@ import { Messages } from "../../Utility/CommonMessages";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../AddToCart/AddtoCartslice";
 import { showDialog } from "../CommonConfirmationModal/confirmationSlice";
+import { useCart } from "../../Context/cartContext";
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const navigate = useNavigate();
+  const { addToCart } = useCart();
 
   const dispatch = useDispatch();
   const handleGoToDetails = () => {
@@ -24,7 +26,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         })
       );
     } else {
-      dispatch(addToCart(product));
+      addToCart(product);
     }
   };
   return (

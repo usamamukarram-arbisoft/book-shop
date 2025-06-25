@@ -5,13 +5,14 @@ import App from "./App.tsx";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./Store/Store.tsx";
+import { CartProvider } from "./Context/cartContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
+  <BrowserRouter>
+    <Provider store={store}>
+      <CartProvider>
         <App />
-      </Provider>
-    </BrowserRouter>
-  </StrictMode>
+      </CartProvider>
+    </Provider>
+  </BrowserRouter>
 );

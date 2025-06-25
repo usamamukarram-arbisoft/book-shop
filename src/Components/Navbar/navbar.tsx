@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { openDrawer, selectTotalItems } from "../AddToCart/AddtoCartslice";
 import type { RootState } from "../../Store/Store";
 import { logout } from "../SignIn/SinginSlice";
+import { useCart } from "../../Context/cartContext";
 const Navbar = () => {
   const menus = [
     { name: Messages.menu.home.value, link: "/" },
@@ -14,7 +15,8 @@ const Navbar = () => {
   ];
   const location = useLocation().pathname;
   const dispatch = useDispatch();
-  const itemCounts = useSelector(selectTotalItems);
+  const { cart } = useCart();
+  const itemCounts = cart.reduce((total, item) => total + item.quantity, 0);
   const user = useSelector((state: RootState) => state.auth.user);
   const cartDetails = () => {
     dispatch(openDrawer());
