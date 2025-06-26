@@ -19,13 +19,11 @@ const SignIn = () => {
   }, [isLoggedIn]);
   const logIn = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const formData = new FormData(event.target as HTMLFormElement);
+    const loginObj = Object.fromEntries(formData.entries());
 
-    const email = (
-      event.currentTarget.elements.namedItem("email") as HTMLInputElement
-    ).value;
-    const password = (
-      event.currentTarget.elements.namedItem("password") as HTMLInputElement
-    ).value;
+    const email = loginObj.email.toString();
+    const password = loginObj.password.toString();
     if (email && password)
       loginRequest({ email, password }).then((user) => {
         dispach(loginUser(user));
