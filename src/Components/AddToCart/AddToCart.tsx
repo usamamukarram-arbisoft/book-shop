@@ -80,6 +80,7 @@ const AddToCart = () => {
                       className="btn btn-outline-brown"
                       onClick={() => {
                         navigate("/books");
+                        dispatch(closeDrawer());
                       }}
                     >
                       <i className="bi bi-arrow-left me-2"></i>
