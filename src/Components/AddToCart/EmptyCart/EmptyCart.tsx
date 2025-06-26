@@ -10,7 +10,7 @@ function EmptyCart() {
           <p className="fs-2 fw-medium mt-4">
             {Messages.emptyCart.emptyCartTitle.value}
           </p>
-          <p className="mt-4 mb-5">{Messages.emptyCart.emptyCartTitle.value}</p>
+          <p className="mt-4 mb-5">{Messages.emptyCart.emptyCartTexy.value}</p>
           <a
             href="/"
             className="btn btn-light fw-semibold rounded px-4 py-2 custom-btn"
