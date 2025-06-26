@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import type { Books, PaginationProps } from "../../Types/Types";
+import { useEffect, useState } from "react";
+import type { PaginationProps } from "../../Types/Types";
 import { pagination } from "../../Utility/CommonFunction";
 import { Messages } from "../../Utility/CommonMessages";
 import { PAGINATION_CONSTANT } from "../../Utility/CommonConstants";

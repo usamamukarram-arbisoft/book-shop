@@ -1,26 +1,35 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./SignIn.css";
-import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "./SinginSlice";
-import type { RootState } from "../../Store/Store";
 import { loginRequest } from "../../Utility/Api";
+import { Messages } from "../../Utility/CommonMessages";
+import { useNavigate } from "react-router-dom";
+import type { RootState } from "../../Store/Store";
 
 const SignIn = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const dispach = useDispatch();
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
+
   useEffect(() => {
     if (isLoggedIn) {
       navigate("/books");
     }
   }, [isLoggedIn]);
-  const logIn = () => {
-    loginRequest({ email, password }).then((user: any) => {
-      dispach(loginUser(user));
-    });
+  const logIn = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const email = (
+      event.currentTarget.elements.namedItem("email") as HTMLInputElement
+    ).value;
+    const password = (
+      event.currentTarget.elements.namedItem("password") as HTMLInputElement
+    ).value;
+    if (email && password)
+      loginRequest({ email, password }).then((user) => {
+        dispach(loginUser(user));
+      });
   };
 
   return (
@@ -28,53 +37,50 @@ const SignIn = () => {
       <div className="card shadow-lg w-100">
         <div className="card-body">
           <div className="text-center">
-            <h1 className="card-title h3">Sign in</h1>
+            <h1 className="card-title h3">{Messages.SignIn.cardTitle.value}</h1>
             <p className="card-text text-muted">
-              Sign in below to access your account
+              {Messages.SignIn.cardText.value}
             </p>
           </div>
           <div className="mt-4">
-            <form>
+            <form onSubmit={logIn}>
               <div className="mb-4">
                 <label htmlFor="email" className="form-label text-muted">
-                  Email Address
+                  {Messages.SignIn.emailLable.value}
                 </label>
                 <input
                   type="email"
                   className="form-control"
                   id="email"
-                  placeholder="Email Address"
+                  name="email"
+                  placeholder={Messages.SignIn.emailLable.value}
                   required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="mb-4">
                 <label htmlFor="password" className="form-label text-muted">
-                  Password
+                  {Messages.SignIn.passwordLable.value}
                 </label>
                 <input
                   type="password"
                   className="form-control"
                   id="password"
-                  placeholder="Password"
+                  name="password"
+                  placeholder={Messages.SignIn.passwordLable.value}
                   required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <div className="d-grid">
-                <button
-                  type="button"
-                  onClick={logIn}
-                  className="btn primary  btn-lg btn-color"
-                >
-                  Sign in
+                <button type="submit" className="btn primary  btn-lg btn-color">
+                  {Messages.SignIn.loginBtn.value}
                 </button>
               </div>
               <p className="text-center text-muted mt-4">
-                Don't have an account yet?
-                <a className="text-decoration-none">Sign up</a>.
+                {Messages.SignIn.signupText.value}
+                <a className="text-decoration-none">
+                  {Messages.SignIn.signupLink.value}
+                </a>
+                .
               </p>
             </form>
           </div>

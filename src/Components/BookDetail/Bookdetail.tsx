@@ -27,7 +27,7 @@ const BookDetail = () => {
               src={book.image_url}
               className="card-img-top h-100"
               alt="Product Image"
-            ></img>
+            />
           </div>
         </div>
 

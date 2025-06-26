@@ -1,19 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { Books } from "../../Types/Types";
+import type { AddToCartState } from "../../Types/Types";
 import type { RootState } from "../../Store/Store";
 
-type CartItem = {
-  books: Books;
-};
-
-interface AddToCartState {
-  item: CartItem["books"][];
-  openDrawer: boolean;
-  error: string;
-}
-
 const initialState: AddToCartState = {
-  item: [],
+  items: [],
   openDrawer: false,
   error: "",
 };
@@ -24,8 +14,8 @@ const AddToCartSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       const newItem = action.payload;
-      const existingItem = state.item.find(
-        (item) => item.bookId == newItem.bookId
+      const existingItem = state.items.find(
+        (items) => items.bookId == newItem.bookId
       );
       if (action.payload.available_books === 0) {
         return;
@@ -38,7 +28,7 @@ const AddToCartSlice = createSlice({
         }
       } else {
         newItem.totalPrice = newItem.price_usd;
-        state.item.push({ ...newItem, quantity: 1 });
+        state.items.push({ ...newItem, quantity: 1 });
       }
     },
     openDrawer: (state) => {
@@ -49,20 +39,20 @@ const AddToCartSlice = createSlice({
     },
     decrementQuantity: (state, action) => {
       const bookId = action.payload.bookId;
-      const existingItem = state.item.find((item) => item.bookId === bookId);
+      const existingItem = state.items.find((item) => item.bookId === bookId);
       if (existingItem) {
         if (existingItem.quantity > 1) {
           existingItem.quantity -= 1;
           existingItem.totalPrice =
             existingItem.price_usd * existingItem.quantity;
         } else {
-          state.item = state.item.filter((item) => item.bookId !== bookId);
+          state.items = state.items.filter((item) => item.bookId !== bookId);
         }
       }
     },
-    IncrementQuantity: (state, action) => {
+    incrementQuantity: (state, action) => {
       const bookId = action.payload.bookId;
-      const existingItem = state.item.find((item) => item.bookId === bookId);
+      const existingItem = state.items.find((item) => item.bookId === bookId);
       if (existingItem) {
         if (existingItem.quantity < existingItem.available_books) {
           existingItem.quantity += 1;
@@ -73,10 +63,10 @@ const AddToCartSlice = createSlice({
     },
     deleteItem: (state, action) => {
       const bookId = action.payload.bookId;
-      state.item = state.item.filter((item) => item.bookId !== bookId);
+      state.items = state.items.filter((item) => item.bookId !== bookId);
     },
     clearCart: (state) => {
-      state.item = [];
+      state.items = [];
     },
   },
 });
@@ -85,11 +75,11 @@ export const {
   openDrawer,
   closeDrawer,
   addToCart,
-  IncrementQuantity,
+  incrementQuantity,
   decrementQuantity,
   deleteItem,
   clearCart,
 } = AddToCartSlice.actions;
 export const selectTotalItems = (state: RootState) =>
-  state.drawer.item.reduce((total, item) => total + item.quantity, 0);
+  state.drawer.items.reduce((total, item) => total + item.quantity, 0);
 export default AddToCartSlice.reducer;

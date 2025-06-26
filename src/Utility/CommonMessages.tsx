@@ -29,6 +29,7 @@ export const Messages = {
     login: { key: ".menu.login", value: "Login" },
     aboutUs: { key: ".menu.aboutUs", value: "About Us" },
     contactUs: { key: ".menu.contactUs", value: "Contact Us" },
+    Hi: { key: "menu.Hi", value: "Hi" },
   },
   checkOutPage: {
     checkOut: { key: "cartPage.checkout", value: "Proceed to Checkout" },
@@ -48,8 +49,8 @@ export const Messages = {
   confirmDialog: {
     title: { key: "confirm.title", value: "Confirm Order" },
     message: { key: "confirm.message", value: "Do you want to place order?" },
-    // title:{key:"confirm.title"},
-    // title:{key:"confirm.title"}
+    no: { key: "confirm.no", value: "No" },
+    yes: { key: "confirm.yes", value: "Yes" },
   },
   thankyou: {
     title: { key: "thankyou.title", value: "Thank You !" },
@@ -63,6 +64,31 @@ export const Messages = {
     message: {
       key: "confirm.message",
       value: "This book is out of stock.",
+    },
+  },
+  SignIn: {
+    cardTitle: { key: "signIn.cardTitle", value: "Sign in" },
+    cardText: {
+      key: "signIn.cardText",
+      value: "Sign in below to access your account",
+    },
+    emailLable: { key: "SignIn.emailAddress", value: "Email Address" },
+    passwordLable: { key: "SignIn.password", value: "Password" },
+    loginBtn: { key: "SignIn.loginBtn", value: "Sign in" },
+    signupText: {
+      key: "SignIn.signupText",
+      value: "Don't have an account yet?",
+    },
+    signupLink: { key: "SignIn.signupLink", value: "Sign up" },
+  },
+  emptyCart: {
+    emptyCartTitle: {
+      key: "emptyCart.title",
+      value: "Your shopping cart is empty!",
+    },
+    emptyCartTexy: {
+      key: "emptyCartText",
+      value: "You have no items in your shopping cart.",
     },
   },
 };

@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { Books } from "../Types/Types";
+import type { Books, usersInterface } from "../Types/Types";
 export const fetchBooks = (): Promise<Books[]> => {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -10,13 +10,13 @@ export const fetchBooks = (): Promise<Books[]> => {
   });
 };
 
-export const loginRequest = (payload: any) => {
+export const loginRequest = (payload: usersInterface) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      axios.get("src/Users.json").then((res: any) => {
+      axios.get("src/Users.json").then((res) => {
         const users = res.data;
         const isUserMatched = users.find(
-          (user: any) =>
+          (user: usersInterface) =>
             user.email == payload.email && user.password === payload.password
         );
         if (isUserMatched) {

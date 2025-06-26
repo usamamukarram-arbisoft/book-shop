@@ -1,5 +1,5 @@
-import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { User, UserState } from "../../Types/Types";
+import { createSlice } from "@reduxjs/toolkit";
+import type { UserState } from "../../Types/Types";
 
 const initialState: UserState = {
   user: null,
@@ -10,12 +10,13 @@ const SignInslice = createSlice({
   name: "SignIn",
   initialState,
   reducers: {
-    loginUser: (state, action: PayloadAction<User>) => {
+    loginUser: (state, action) => {
       state.user = action.payload;
       state.isLoggedIn = true;
     },
     logout: (state) => {
       state.user = null;
+      state.isLoggedIn = false;
     },
   },
 });

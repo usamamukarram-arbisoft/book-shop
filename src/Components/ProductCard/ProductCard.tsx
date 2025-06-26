@@ -5,24 +5,20 @@ import { Messages } from "../../Utility/CommonMessages";
 
 import { useDispatch } from "react-redux";
 import { addToCart } from "../AddToCart/AddtoCartslice";
-import { showDialog } from "../CommonConfirmationModal/confirmationSlice";
+import CommonConfirmation from "../CommonConfirmationModal/CommonConfirmation";
+import { useState } from "react";
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
+  const [openDialog, setOpenDialog] = useState(false);
   const handleGoToDetails = () => {
     navigate(`/books/${product.bookId}`, { state: { product } });
   };
   const handleAddToCart = () => {
     if (product.available_books === 0) {
-      dispatch(
-        showDialog({
-          title: Messages.outOfStock.title.value,
-          message: Messages.outOfStock.message.value,
-          displayBtn: false,
-        })
-      );
+      setOpenDialog(true);
     } else {
       dispatch(addToCart(product));
     }
@@ -31,7 +27,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
     <>
       <div className="col-md-4 mb-4">
         <div className="featured-product-card">
-          <img className="featured-product-image" src={product.image_url}></img>
+          <img className="featured-product-image" src={product.image_url} />
 
           <div className="featured-product-details">
             <h3 className="mb-3 text-truncate">{product.title}</h3>
@@ -56,7 +52,15 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </div>
         </div>
       </div>
-      {/* <AddToCart /> */}
+      <CommonConfirmation
+        openDialog={openDialog}
+        title={Messages.outOfStock.title.value}
+        message={Messages.outOfStock.message.value}
+        IsDisplayBtn={false}
+        handleClose={() => {
+          setOpenDialog(false);
+        }}
+      />
     </>
   );
 };
