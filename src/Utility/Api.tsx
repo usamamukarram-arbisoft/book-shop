@@ -1,6 +1,7 @@
 import axios from "axios";
 
 import type { Books, usersInterface } from "../Types/Types";
+import { Messages } from "./CommonMessages";
 export const fetchBooks = (): Promise<Books[]> => {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -23,7 +24,7 @@ export const loginRequest = (payload: usersInterface) => {
         if (isUserMatched) {
           resolve(isUserMatched);
         } else {
-          reject("Invalid email or password");
+          reject(Messages.SignIn.error.value);
         }
       });
     }, 1000);

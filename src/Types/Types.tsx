@@ -19,6 +19,7 @@ export interface PaginationProps {
 
 export interface ProductCardProps {
   product: Books;
+  setOpenDialog: (open: boolean) => void;
 }
 
 export interface User {

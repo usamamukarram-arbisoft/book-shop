@@ -1,19 +1,16 @@
 import "./ProductCard.css";
 
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import type { ProductCardProps } from "../../Types/Types";
 import { Messages } from "../../Utility/CommonMessages";
 import { addToCart } from "../AddToCart/AddtoCartslice";
-import CommonConfirmation from "../CommonConfirmationModal/CommonConfirmation";
 
-const ProductCard = ({ product }: ProductCardProps) => {
+const ProductCard = ({ product, setOpenDialog }: ProductCardProps) => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-  const [openDialog, setOpenDialog] = useState(false);
   const handleGoToDetails = () => {
     navigate(`/books/${product.bookId}`, { state: { product } });
   };
@@ -53,15 +50,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </div>
         </div>
       </div>
-      <CommonConfirmation
-        openDialog={openDialog}
-        title={Messages.outOfStock.title.value}
-        message={Messages.outOfStock.message.value}
-        IsDisplayBtn={false}
-        handleClose={() => {
-          setOpenDialog(false);
-        }}
-      />
     </>
   );
 };

@@ -72,14 +72,15 @@ export const Messages = {
       key: "signIn.cardText",
       value: "Sign in below to access your account",
     },
-    emailLable: { key: "SignIn.emailAddress", value: "Email Address" },
-    passwordLable: { key: "SignIn.password", value: "Password" },
+    emailLabel: { key: "SignIn.emailAddress", value: "Email Address" },
+    passwordLabel: { key: "SignIn.password", value: "Password" },
     loginBtn: { key: "SignIn.loginBtn", value: "Sign in" },
     signupText: {
       key: "SignIn.signupText",
       value: "Don't have an account yet?",
     },
     signupLink: { key: "SignIn.signupLink", value: "Sign up" },
+    error: { key: "SigIn.error", value: "Invalid email or password" },
   },
   emptyCart: {
     emptyCartTitle: {

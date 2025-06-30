@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Messages } from "../../../Utility/CommonMessages";
 
 function EmptyCart() {
+  const navigate = useNavigate();
   return (
     <div className="custom-bg text-dark">
       <div className="d-flex align-items-center justify-content-center min-vh-100 px-2">
@@ -13,7 +15,9 @@ function EmptyCart() {
           </p>
           <p className="mt-4 mb-5">{Messages.emptyCart.emptyCartTexy.value}</p>
           <a
-            href="/"
+            onClick={() => {
+              navigate("/books");
+            }}
             className="btn btn-light fw-semibold rounded px-4 py-2 custom-btn"
           >
             {Messages.productDetails.back.value}

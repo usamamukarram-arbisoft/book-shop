@@ -6,16 +6,11 @@ import { Link, useLocation } from "react-router-dom";
 
 import type { RootState } from "../../Store/Store";
 import type { MenuItem } from "../../Types/Types";
+import { menus } from "../../Utility/CommonConstants";
 import { Messages } from "../../Utility/CommonMessages";
 import { openDrawer, selectTotalItems } from "../AddToCart/AddtoCartslice";
 import { logout } from "../SignIn/SinginSlice";
 const Navbar = () => {
-  const menus = [
-    { name: Messages.menu.home.value, link: "/" },
-    { name: Messages.menu.books.value, link: "/books" },
-    { name: Messages.menu.login.value, link: "/login" },
-  ];
-
   const location = useLocation().pathname;
   const dispatch = useDispatch();
   const itemCounts = useSelector(selectTotalItems);

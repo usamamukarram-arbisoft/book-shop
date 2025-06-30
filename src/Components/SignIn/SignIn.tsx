@@ -1,6 +1,6 @@
 import "./SignIn.css";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -12,6 +12,7 @@ import { loginUser } from "./SinginSlice";
 const SignIn = () => {
   const navigate = useNavigate();
   const dispach = useDispatch();
+  const [errorMessage, setErrorMessage] = useState("");
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
 
   useEffect(() => {
@@ -22,14 +23,18 @@ const SignIn = () => {
   const logIn = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.target as HTMLFormElement);
-    const loginObj = Object.fromEntries(formData.entries());
+    const loginObj = Object.fromEntries(formData);
 
     const email = loginObj.email.toString();
     const password = loginObj.password.toString();
     if (email && password)
-      loginRequest({ email, password }).then((user) => {
-        dispach(loginUser(user));
-      });
+      loginRequest({ email, password })
+        .then((user) => {
+          dispach(loginUser(user));
+        })
+        .catch((error) => {
+          setErrorMessage(error);
+        });
   };
 
   return (
@@ -46,27 +51,27 @@ const SignIn = () => {
             <form onSubmit={logIn}>
               <div className="mb-4">
                 <label htmlFor="email" className="form-label text-muted">
-                  {Messages.SignIn.emailLable.value}
+                  {Messages.SignIn.emailLabel.value}
                 </label>
                 <input
                   type="email"
                   className="form-control"
                   id="email"
                   name="email"
-                  placeholder={Messages.SignIn.emailLable.value}
+                  placeholder={Messages.SignIn.emailLabel.value}
                   required
                 />
               </div>
               <div className="mb-4">
                 <label htmlFor="password" className="form-label text-muted">
-                  {Messages.SignIn.passwordLable.value}
+                  {Messages.SignIn.passwordLabel.value}
                 </label>
                 <input
                   type="password"
                   className="form-control"
                   id="password"
                   name="password"
-                  placeholder={Messages.SignIn.passwordLable.value}
+                  placeholder={Messages.SignIn.passwordLabel.value}
                   required
                 />
               </div>
@@ -75,6 +80,10 @@ const SignIn = () => {
                   {Messages.SignIn.loginBtn.value}
                 </button>
               </div>
+              {errorMessage && (
+                <p className="text-center text-danger mt-4">{errorMessage}</p>
+              )}
+
               <p className="text-center text-muted mt-4">
                 {Messages.SignIn.signupText.value}
                 <a className="text-decoration-none">
