@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { AddToCartState } from "../../Types/Types";
+
 import type { RootState } from "../../Store/Store";
+import type { AddToCartState } from "../../Types/Types";
 
 const initialState: AddToCartState = {
   items: [],

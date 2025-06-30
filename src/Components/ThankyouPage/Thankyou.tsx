@@ -1,6 +1,7 @@
 import React from "react";
-import { Messages } from "../../Utility/CommonMessages";
 import { useNavigate } from "react-router-dom";
+
+import { Messages } from "../../Utility/CommonMessages";
 
 const Thankyou = () => {
   const navigate = useNavigate();

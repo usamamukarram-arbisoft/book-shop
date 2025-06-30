@@ -1,8 +1,10 @@
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import "./BookDetails.css";
+
+import { useDispatch } from "react-redux";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
+
 import { Messages } from "../../Utility/CommonMessages";
 import { addToCart } from "../AddToCart/AddtoCartslice";
-import { useDispatch } from "react-redux";
 
 const BookDetail = () => {
   const location = useLocation().state;

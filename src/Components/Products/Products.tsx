@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
-import ProductCard from "../ProductCard/ProductCard";
 import "./products.css";
+
+import { useEffect, useState } from "react";
+
 import type { Books } from "../../Types/Types";
 import { fetchBooks } from "../../Utility/Api";
 import Pagination from "../Pagination/Pagination";
+import ProductCard from "../ProductCard/ProductCard";
 const Products = () => {
   const [BooksListing, setBooksListing] = useState<Books[]>([]);
   const [currentItems, setCurrentItems] = useState<Books[]>([]);

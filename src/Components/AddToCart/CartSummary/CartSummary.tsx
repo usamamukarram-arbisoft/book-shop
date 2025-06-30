@@ -1,5 +1,5 @@
-import { Messages } from "../../../Utility/CommonMessages";
 import type { cartSummary } from "../../../Types/Types";
+import { Messages } from "../../../Utility/CommonMessages";
 
 const CartSummary = ({
   subtotal,

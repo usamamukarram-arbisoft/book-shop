@@ -1,11 +1,12 @@
 import { useDispatch } from "react-redux";
+
+import type { cartItemProps } from "../../../Types/Types";
 import { Messages } from "../../../Utility/CommonMessages";
 import {
   decrementQuantity,
-  incrementQuantity,
   deleteItem,
+  incrementQuantity,
 } from "../AddtoCartslice";
-import type { cartItemProps } from "../../../Types/Types";
 
 const CardProduct = (product: cartItemProps) => {
   const dispatch = useDispatch();

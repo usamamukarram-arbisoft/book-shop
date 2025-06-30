@@ -1,7 +1,7 @@
-import Navbar from "./Components/Navbar/navbar";
 import { useLocation } from "react-router-dom";
 
 import AddToCart from "./Components/AddToCart/AddToCart";
+import Navbar from "./Components/Navbar/navbar";
 import RoutingComponent from "./Components/Routing/RoutingComponent";
 
 const App = () => {

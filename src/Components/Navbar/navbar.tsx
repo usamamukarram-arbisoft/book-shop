@@ -1,12 +1,14 @@
 import "./navbar.css";
-import { Link, useLocation } from "react-router-dom";
-import { Messages } from "../../Utility/CommonMessages";
+
 import Badge from "react-bootstrap/Badge";
 import { useDispatch, useSelector } from "react-redux";
-import { openDrawer, selectTotalItems } from "../AddToCart/AddtoCartslice";
+import { Link, useLocation } from "react-router-dom";
+
 import type { RootState } from "../../Store/Store";
-import { logout } from "../SignIn/SinginSlice";
 import type { MenuItem } from "../../Types/Types";
+import { Messages } from "../../Utility/CommonMessages";
+import { openDrawer, selectTotalItems } from "../AddToCart/AddtoCartslice";
+import { logout } from "../SignIn/SinginSlice";
 const Navbar = () => {
   const menus = [
     { name: Messages.menu.home.value, link: "/" },

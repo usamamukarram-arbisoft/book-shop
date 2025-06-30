@@ -1,14 +1,16 @@
+import "./AddToCart.css";
+
+import { useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useDispatch, useSelector } from "react-redux";
-import type { RootState } from "../../Store/Store";
-import { clearCart, closeDrawer } from "./AddtoCartslice";
-import "./AddToCart.css";
-import { Messages } from "../../Utility/CommonMessages";
 import { useNavigate } from "react-router-dom";
+
+import type { RootState } from "../../Store/Store";
+import { Messages } from "../../Utility/CommonMessages";
+import CommonConfirmation from "../CommonConfirmationModal/CommonConfirmation";
+import { clearCart, closeDrawer } from "./AddtoCartslice";
 import CartProduct from "./CartProduct/CartProduct";
 import CartSummary from "./CartSummary/CartSummary";
-import CommonConfirmation from "../CommonConfirmationModal/CommonConfirmation";
-import { useState } from "react";
 import EmptyCart from "./EmptyCart/EmptyCart";
 
 const AddToCart = () => {
