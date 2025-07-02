@@ -9,7 +9,7 @@ function EmptyCart() {
     <div className="custom-bg text-dark">
       <div className="d-flex align-items-center justify-content-center min-vh-100 px-2">
         <div className="text-center">
-          <i className="display-1 fw-bold bi bi-cart-x-fill"></i>
+          <i className="display-1 fw-bold bi bi-cart-x-fill" />
           <p className="fs-2 fw-medium mt-4">
             {Messages.emptyCart.emptyCartTitle.value}
           </p>

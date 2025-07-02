@@ -18,7 +18,7 @@ const Navbar = () => {
   const cartDetails = () => {
     dispatch(openDrawer());
   };
-  const renderLinks = (menu: MenuItem, index: number, location: string) => {
+  const renderLinks = (menu: MenuItem, index: number) => {
     return (
       <li
         className={`nav-item ${location === menu.link ? "active" : ""}`}
@@ -33,17 +33,17 @@ const Navbar = () => {
   return (
     <ul className="nav justify-content-end align-items-center">
       {menus.map((menu, index) => {
-        if (menu.link === "/login" && (!user || user == null)) {
-          return renderLinks(menu, index, location);
+        if (menu.link === "/login" && !user) {
+          return renderLinks(menu, index);
         }
         if (menu.link !== "/login") {
-          return renderLinks(menu, index, location);
+          return renderLinks(menu, index);
         }
       })}
 
       <li className="nav-item">
         <a className="nav-link d-flex">
-          <i className="bi bi-cart-plus icon-size" onClick={cartDetails}></i>
+          <i className="bi bi-cart-plus icon-size" onClick={cartDetails} />
           <Badge className="badge-size" bg="danger">
             {itemCounts}
           </Badge>
