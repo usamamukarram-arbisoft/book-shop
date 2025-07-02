@@ -10,6 +10,7 @@ import { menus } from "../../Utility/CommonConstants";
 import { Messages } from "../../Utility/CommonMessages";
 import { openDrawer, selectTotalItems } from "../AddToCart/AddtoCartslice";
 import { logout } from "../SignIn/SinginSlice";
+import React from "react";
 const Navbar = () => {
   const location = useLocation().pathname;
   const dispatch = useDispatch();
@@ -42,7 +43,7 @@ const Navbar = () => {
       })}
 
       <li className="nav-item">
-        <a className="nav-link d-flex">
+        <a href="#" aria-label="Cart" className="nav-link d-flex">
           <i className="bi bi-cart-plus icon-size" onClick={cartDetails}></i>
           <Badge className="badge-size" bg="danger">
             {itemCounts}
@@ -52,6 +53,8 @@ const Navbar = () => {
       {user && (
         <li className="nav-item">
           <a
+            href="#"
+            aria-label="Sign Out"
             className="nav-link d-flex"
             onClick={() => {
               dispatch(logout());

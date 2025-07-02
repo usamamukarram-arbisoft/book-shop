@@ -12,6 +12,7 @@ import { clearCart, closeDrawer } from "./AddtoCartslice";
 import CartProduct from "./CartProduct/CartProduct";
 import CartSummary from "./CartSummary/CartSummary";
 import EmptyCart from "./EmptyCart/EmptyCart";
+import React from "react";
 
 const AddToCart = () => {
   const dispatch = useDispatch();
