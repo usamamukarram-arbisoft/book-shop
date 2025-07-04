@@ -1,0 +1,16 @@
+.card {
+  max-width: 450px !important;
+}
+.main {
+  height: 100vh !important;
+}
+.primary {
+  background-color: #5619199d !important;
+  border: 1px solid #561919b8 !important;
+  color: white !important;
+}
+.primary:hover {
+  background-color: #561919 !important;
+  border: 1px solid #561919b8 !important;
+  color: white !important;
+}

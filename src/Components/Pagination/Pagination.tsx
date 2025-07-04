@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
-import type { Books, PaginationProps } from "../../Types/Types";
+import "./Pagination.css";
+
+import { useEffect, useState } from "react";
+
+import type { PaginationProps } from "../../Types/Types";
+import { PAGINATION_CONSTANT } from "../../Utility/CommonConstants";
 import { pagination } from "../../Utility/CommonFunction";
 import { Messages } from "../../Utility/CommonMessages";
-import { PAGINATION_CONSTANT } from "../../Utility/CommonConstants";
-import "./Pagination.css";
 
 const Pagination = ({ sampleProducts, onPageChange }: PaginationProps) => {
   const pageSize = PAGINATION_CONSTANT.ITEMS_PER_PAGE;

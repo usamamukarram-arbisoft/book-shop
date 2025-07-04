@@ -1,6 +1,10 @@
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import "./BookDetails.css";
+
+import { useDispatch } from "react-redux";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
+
 import { Messages } from "../../Utility/CommonMessages";
+import { addToCart } from "../AddToCart/AddtoCartslice";
 
 const BookDetail = () => {
   const location = useLocation().state;
@@ -8,9 +12,12 @@ const BookDetail = () => {
   const handleBack = () => {
     navigate(`/`);
   };
+  const dispatch = useDispatch();
 
   const book = location?.product;
-
+  const handleAddToCart = () => {
+    dispatch(addToCart(book));
+  };
   if (!book) return <Navigate to="/notfound" />;
 
   return (
@@ -22,7 +29,7 @@ const BookDetail = () => {
               src={book.image_url}
               className="card-img-top h-100"
               alt="Product Image"
-            ></img>
+            />
           </div>
         </div>
 
@@ -42,6 +49,12 @@ const BookDetail = () => {
             </span>
             <span className="text-muted">${book.price_usd}</span>
           </div>
+          <div className="mb-3">
+            <span className="me-2">
+              <strong>{Messages.productDetails.quantity.value}:</strong>
+            </span>
+            <span className="text-muted">{book.available_books}</span>
+          </div>
           <p className="mb-1">
             <strong>{Messages.productDetails.description.value}:</strong>
           </p>
@@ -51,8 +64,8 @@ const BookDetail = () => {
             <a className="btn btn-primary me-5" onClick={handleBack}>
               {Messages.productDetails.back.value}
             </a>
-            <a href="#" className="btn btn-primary">
-              <i className="bi bi-cart-plus"></i>
+            <a className="btn btn-primary" onClick={handleAddToCart}>
+              <i className="bi bi-cart-plus" />
               {Messages.productCard.addToCart.value}
             </a>
           </div>

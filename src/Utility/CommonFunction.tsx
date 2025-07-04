@@ -3,7 +3,7 @@ export function pagination<T>(
   currentPage: number,
   pageSize: number
 ): { currentItems: T[]; pages: number } {
-  const startingIndex = currentPage * pageSize;
+  const startingIndex = (currentPage - 1) * pageSize;
   const endingIndex = startingIndex + pageSize;
   const displayItemsPerPage = items.slice(startingIndex, endingIndex);
 
