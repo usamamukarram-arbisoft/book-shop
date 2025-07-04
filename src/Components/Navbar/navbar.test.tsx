@@ -1,13 +1,14 @@
+import "@testing-library/jest-dom";
+
+import { configureStore } from "@reduxjs/toolkit";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import React from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import "@testing-library/jest-dom";
-import { configureStore } from "@reduxjs/toolkit";
+import { BrowserRouter, MemoryRouter } from "react-router-dom";
 
-import Navbar from "./navbar";
+import addtocardreducer, { openDrawer } from "../AddToCart/AddtoCartslice";
 import SignInReducer, { logout } from "../SignIn/SinginSlice";
-import addtocardreducer from "../AddToCart/AddtoCartslice";
+import Navbar from "./navbar";
 
 jest.mock("../SignIn/SinginSlice", () => {
   const actual = jest.requireActual("../SignIn/SinginSlice");
@@ -19,7 +20,9 @@ jest.mock("../SignIn/SinginSlice", () => {
   };
 });
 
-const renderWithStore = (store: any) =>
+import type { EnhancedStore } from "@reduxjs/toolkit";
+
+const renderWithStore = (store: EnhancedStore) =>
   render(
     <Provider store={store}>
       <BrowserRouter>
@@ -205,22 +208,37 @@ describe("Navbar Component", () => {
     });
   });
   test("open drawer on cart icon click", () => {
-    // const dispatchSpy = jest.spyOn(store, "dispatch");
     const mockStore = configureStore({
-      reducer: { auth: SignInReducer, drawer: addtocardreducer },
+      reducer: {
+        auth: SignInReducer,
+        drawer: addtocardreducer,
+      },
       preloadedState: {
         drawer: {
           items: [],
-          openDrawer: true,
+          openDrawer: false,
           error: "",
+        },
+        auth: {
+          user: null,
+          isLoggedIn: false,
         },
       },
     });
 
-    renderWithStore(mockStore);
-    const cartIcon = screen.getByRole("link", { name: /cart/i });
-    fireEvent.click(cartIcon);
+    const dispatchSpy = jest.spyOn(mockStore, "dispatch");
 
-    expect(mockStore.getState().drawer.openDrawer).toBe(true);
+    render(
+      <Provider store={mockStore}>
+        <MemoryRouter>
+          <Navbar />
+        </MemoryRouter>
+      </Provider>
+    );
+
+    const cartElement = screen.getByLabelText("Cart");
+    fireEvent.click(cartElement);
+
+    expect(dispatchSpy).toHaveBeenCalledWith(openDrawer());
   });
 });

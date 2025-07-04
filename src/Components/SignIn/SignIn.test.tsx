@@ -1,17 +1,18 @@
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
+
+import { configureStore } from "@reduxjs/toolkit";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import axios from "axios";
+import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import SignIn from "./SignIn";
-import { store } from "../../Store/Store";
-import React from "react";
-import * as api from "../../Utility/Api";
-import { configureStore } from "@reduxjs/toolkit";
-import SignInReducer from "./SinginSlice";
-import axios from "axios";
-// import { loginRequest } from "../../Utility/Api";
 
-jest.mock("../../Utility/Api");
+import { store } from "../../Store/Store";
+import * as api from "../../Utility/Api/Api";
+import SignIn from "./SignIn";
+import SignInReducer from "./SinginSlice";
+
+jest.mock("../../Utility/Api/Api");
 jest.mock("axios");
 
 const mockStore = configureStore({

@@ -1,6 +1,7 @@
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import BookDetail from "../BookDetail/BookDetail";
+import BookDetail from "../BookDetail/Bookdetail";
 import Dashboard from "../Dashboard/Dashboard";
 import NotFound from "../NotFound/NotFound";
 import Products from "../Products/Products";

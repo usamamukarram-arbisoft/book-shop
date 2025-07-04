@@ -1,5 +1,6 @@
 import "./ProductCard.css";
 
+import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -43,7 +44,11 @@ const ProductCard = ({ product, setOpenDialog }: ProductCardProps) => {
               <a className="btn btn-primary me-3" onClick={handleGoToDetails}>
                 {Messages.productCard.viewDetails.value}
               </a>
-              <a className="btn btn-primary" onClick={handleAddToCart}>
+              <a
+                className="btn btn-primary"
+                data-testid="add-to-cart"
+                onClick={handleAddToCart}
+              >
                 {Messages.productCard.addToCart.value}
               </a>
             </div>

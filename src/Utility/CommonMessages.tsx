@@ -56,7 +56,7 @@ export const Messages = {
     title: { key: "thankyou.title", value: "Thank You !" },
     message: {
       key: "thankyou.message",
-      value: "We've send the link to your inbox. Lorem ipsum dolor sit, ",
+      value: "Weve send the link to your inbox ",
     },
   },
   outOfStock: {

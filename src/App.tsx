@@ -1,5 +1,5 @@
-import { useLocation } from "react-router-dom";
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 import AddToCart from "./Components/AddToCart/AddToCart";
 import Navbar from "./Components/Navbar/navbar";

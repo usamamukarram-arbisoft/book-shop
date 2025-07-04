@@ -1,11 +1,12 @@
-import { fetchBooks, loginRequest } from "./Api";
 import axios from "axios";
-import { Messages } from "./CommonMessages";
+
+import { Messages } from "../CommonMessages";
+import { fetchBooks, loginRequest } from "./Api";
 
 jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 
-describe("loginRequest API", () => {
+describe("Request API", () => {
   const mockUsers = [
     { email: "test@example.com", password: "12345" },
     { email: "alice@example.com", password: "secret" },
@@ -42,7 +43,6 @@ describe("loginRequest API", () => {
     mockedAxios.get.mockResolvedValueOnce({ data: mockBooks });
 
     const promise = fetchBooks();
-    // jest.advanceTimersByTime(1000);
 
     const result = await promise;
 

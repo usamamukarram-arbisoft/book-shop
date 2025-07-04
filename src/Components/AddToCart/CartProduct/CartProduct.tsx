@@ -1,3 +1,4 @@
+import React from "react";
 import { useDispatch } from "react-redux";
 
 import type { cartItemProps } from "../../../Types/Types";
@@ -59,6 +60,7 @@ const CardProduct = (product: cartItemProps) => {
         <button className="btn btn-sm btn-outline-danger">
           <i
             className="bi bi-trash"
+            data-testid="remove-from-cart"
             onClick={() =>
               dispatch(deleteItem({ bookId: product.item.bookId }))
             }

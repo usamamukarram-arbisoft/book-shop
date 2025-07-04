@@ -1,3 +1,5 @@
+import React from "react";
+
 import type { cartSummary } from "../../../Types/Types";
 import { Messages } from "../../../Utility/CommonMessages";
 

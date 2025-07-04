@@ -1,5 +1,6 @@
 import "./BookDetails.css";
 
+import React from "react";
 import { useDispatch } from "react-redux";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
@@ -65,7 +66,7 @@ const BookDetail = () => {
               {Messages.productDetails.back.value}
             </a>
             <a className="btn btn-primary" onClick={handleAddToCart}>
-              <i className="bi bi-cart-plus"></i>
+              <i className="bi bi-cart-plus" data-testid="add-to-cart"></i>
               {Messages.productCard.addToCart.value}
             </a>
           </div>

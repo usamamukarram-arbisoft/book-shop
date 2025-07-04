@@ -1,6 +1,7 @@
 import "./AddToCart.css";
 
 import { useState } from "react";
+import React from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +13,6 @@ import { clearCart, closeDrawer } from "./AddtoCartslice";
 import CartProduct from "./CartProduct/CartProduct";
 import CartSummary from "./CartSummary/CartSummary";
 import EmptyCart from "./EmptyCart/EmptyCart";
-import React from "react";
 
 const AddToCart = () => {
   const dispatch = useDispatch();

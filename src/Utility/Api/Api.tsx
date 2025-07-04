@@ -1,7 +1,7 @@
 import axios from "axios";
 
-import type { Books, usersInterface } from "../Types/Types";
-import { Messages } from "./CommonMessages";
+import type { Books, usersInterface } from "../../Types/Types";
+import { Messages } from "../CommonMessages";
 export const fetchBooks = (): Promise<Books[]> => {
   return new Promise((resolve) => {
     setTimeout(() => {
