@@ -1,5 +1,6 @@
 import "./navbar.css";
 
+import React from "react";
 import Badge from "react-bootstrap/Badge";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
@@ -42,8 +43,13 @@ const Navbar = () => {
       })}
 
       <li className="nav-item">
-        <a className="nav-link d-flex">
-          <i className="bi bi-cart-plus icon-size" onClick={cartDetails} />
+        <a
+          href="#"
+          aria-label="Cart"
+          className="nav-link d-flex"
+          onClick={cartDetails}
+        >
+          <i className="bi bi-cart-plus icon-size" />
           <Badge className="badge-size" bg="danger">
             {itemCounts}
           </Badge>
@@ -52,6 +58,8 @@ const Navbar = () => {
       {user && (
         <li className="nav-item">
           <a
+            href="#"
+            aria-label="Sign Out"
             className="nav-link d-flex"
             onClick={() => {
               dispatch(logout());

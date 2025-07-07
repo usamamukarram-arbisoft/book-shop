@@ -1,8 +1,12 @@
 import "./NotFound.css";
 
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import { Messages } from "../../Utility/CommonMessages";
 
 const NotFound = () => {
+  const navigate = useNavigate();
   return (
     <div className="custom-bg text-dark">
       <div className="d-flex align-items-center justify-content-center min-vh-100 px-2">
@@ -11,7 +15,9 @@ const NotFound = () => {
           <p className="fs-2 fw-medium mt-4">{Messages.notFound.title.value}</p>
           <p className="mt-4 mb-5">{Messages.notFound.message.value}</p>
           <a
-            href="/"
+            onClick={() => {
+              navigate("/books");
+            }}
             className="btn btn-light fw-semibold rounded px-4 py-2 custom-btn"
           >
             {Messages.productDetails.back.value}

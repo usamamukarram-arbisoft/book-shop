@@ -1,6 +1,7 @@
 import "./AddToCart.css";
 
 import { useState } from "react";
+import React from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";

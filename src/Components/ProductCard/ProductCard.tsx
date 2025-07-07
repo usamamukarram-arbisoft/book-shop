@@ -1,11 +1,13 @@
 import "./ProductCard.css";
 
+import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import type { ProductCardProps } from "../../Types/Types";
 import { Messages } from "../../Utility/CommonMessages";
 import { addToCart } from "../AddToCart/AddtoCartslice";
+import "@testing-library/jest-dom";
 
 const ProductCard = ({ product, setOpenDialog }: ProductCardProps) => {
   const navigate = useNavigate();
@@ -25,6 +27,7 @@ const ProductCard = ({ product, setOpenDialog }: ProductCardProps) => {
     <div className="col-md-4 mb-4">
       <div className="featured-product-card">
         <img className="featured-product-image" src={product.image_url} />
+
         <div className="featured-product-details">
           <h3 className="mb-3 text-truncate">{product.title}</h3>
           <h6 className="card-subtitle text-truncate mb-2 text-body-secondary">
@@ -41,7 +44,11 @@ const ProductCard = ({ product, setOpenDialog }: ProductCardProps) => {
             <a className="btn btn-primary me-3" onClick={handleGoToDetails}>
               {Messages.productCard.viewDetails.value}
             </a>
-            <a className="btn btn-primary" onClick={handleAddToCart}>
+            <a
+              className="btn btn-primary"
+              data-testid="add-to-cart"
+              onClick={handleAddToCart}
+            >
               {Messages.productCard.addToCart.value}
             </a>
           </div>

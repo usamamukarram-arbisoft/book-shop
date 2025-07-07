@@ -1,10 +1,11 @@
 import "./Pagination.css";
 
+import React from "react";
 import { useEffect, useState } from "react";
 
 import type { PaginationProps } from "../../Types/Types";
 import { PAGINATION_CONSTANT } from "../../Utility/CommonConstants";
-import { pagination } from "../../Utility/CommonFunction";
+import { pagination } from "../../Utility/CommonFunction/CommonFunction";
 import { Messages } from "../../Utility/CommonMessages";
 
 const Pagination = ({ sampleProducts, onPageChange }: PaginationProps) => {
