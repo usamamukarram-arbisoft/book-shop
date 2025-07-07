@@ -64,7 +64,7 @@ const CardProduct = (product: cartItemProps) => {
             onClick={() =>
               dispatch(deleteItem({ bookId: product.item.bookId }))
             }
-          ></i>
+          />
         </button>
       </div>
       <div className="border-bottom mt-3"></div>

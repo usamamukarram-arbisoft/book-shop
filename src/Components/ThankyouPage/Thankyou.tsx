@@ -30,7 +30,7 @@ const Thankyou = () => {
               }}
               className="btn btn-outline-brown"
             >
-              <i className="bi bi-arrow-left me-2"></i>
+              <i className="bi bi-arrow-left me-2" />
               {Messages.checkOutPage.continueShoppingBtn.value}
             </a>
           </div>

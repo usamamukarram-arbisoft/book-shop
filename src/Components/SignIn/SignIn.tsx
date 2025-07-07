@@ -32,6 +32,7 @@ const SignIn = () => {
       loginRequest({ email, password })
         .then((user) => {
           dispach(loginUser(user));
+          setErrorMessage("");
         })
         .catch((error) => {
           setErrorMessage(error);

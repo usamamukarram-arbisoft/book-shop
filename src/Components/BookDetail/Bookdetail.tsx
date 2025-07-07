@@ -66,7 +66,7 @@ const BookDetail = () => {
               {Messages.productDetails.back.value}
             </a>
             <a className="btn btn-primary" onClick={handleAddToCart}>
-              <i className="bi bi-cart-plus" data-testid="add-to-cart"></i>
+              <i className="bi bi-cart-plus" />
               {Messages.productCard.addToCart.value}
             </a>
           </div>
