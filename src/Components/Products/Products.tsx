@@ -15,6 +15,12 @@ import { setProducts } from "./ProductsSlice";
 const Products = () => {
   const [BooksListing, setBooksListing] = useState<Books[]>([]);
   const [currentItems, setCurrentItems] = useState<Books[]>([]);
+  const [messageTitle, setMessageTitle] = useState(
+    Messages.outOfStock.title.value
+  );
+  const [messageContent, setMessageContent] = useState(
+    Messages.outOfStock.message.value
+  );
 
   const searchQuery = useSelector(
     (state: RootState) => state.search.searchQuery
@@ -22,7 +28,6 @@ const Products = () => {
   const dispatch = useDispatch();
 
   const sampleProducts = BooksListing;
-
   const [openDialog, setOpenDialog] = useState(false);
   useEffect(() => {
     fetchBooks().then((data) => {
@@ -31,7 +36,13 @@ const Products = () => {
         const filterdBooks = data.filter((books) =>
           books.title.toLowerCase().includes(searchQuery.toLowerCase())
         );
-        setBooksListing(filterdBooks);
+        if (!filterdBooks.length) {
+          setMessageTitle(Messages.noSearchResults.title.value);
+          setMessageContent(Messages.noSearchResults.message.value);
+          setOpenDialog(true);
+        } else {
+          setBooksListing(filterdBooks);
+        }
       } else {
         setBooksListing(data);
       }
@@ -70,8 +81,8 @@ const Products = () => {
       )}
       <CommonConfirmation
         openDialog={openDialog}
-        title={Messages.outOfStock.title.value}
-        message={Messages.outOfStock.message.value}
+        title={messageTitle}
+        message={messageContent}
         IsDisplayBtn={false}
         handleClose={() => {
           setOpenDialog(false);

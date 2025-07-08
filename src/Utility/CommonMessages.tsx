@@ -70,6 +70,13 @@ export const Messages = {
       value: "This book is out of stock.",
     },
   },
+  noSearchResults: {
+    title: { key: "noSearchResults.title", value: "No Results Found" },
+    message: {
+      key: "noSearchResults.message",
+      value: "We couldn't find any books matching your search criteria.",
+    },
+  },
   SignIn: {
     cardTitle: { key: "signIn.cardTitle", value: "Sign in" },
     cardText: {
