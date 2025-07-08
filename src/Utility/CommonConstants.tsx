@@ -1,7 +1,7 @@
 import { Messages } from "./CommonMessages";
 
 export const PAGINATION_CONSTANT = {
-  ITEMS_PER_PAGE: 10,
+  ITEMS_PER_PAGE: 9,
 };
 
 export const menus = [

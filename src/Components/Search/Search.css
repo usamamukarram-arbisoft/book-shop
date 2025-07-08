@@ -1,0 +1,27 @@
+.primary {
+  background-color: #997372 !important;
+  border: 1px solid #561919b8 !important;
+  color: white !important;
+}
+.primary:hover {
+  background-color: #561919 !important;
+  border: 1px solid #561919b8 !important;
+  color: white !important;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+.clearbtn {
+  position: absolute;
+  right: 3.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 1.2rem;
+  cursor: pointer;
+}

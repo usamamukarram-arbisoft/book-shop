@@ -1,13 +1,13 @@
-.nav {
+.navbar {
   background-color: #310c0c;
 }
 
 .nav-link {
   text-decoration: none;
-  color: white;
+  color: white !important;
 }
 .nav-link:hover {
-  color: #929292;
+  color: #929292 !important;
 }
 
 .nav > li.active > a {

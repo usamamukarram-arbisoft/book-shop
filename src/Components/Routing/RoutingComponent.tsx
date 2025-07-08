@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 
-import BookDetail from "../BookDetail/BookDetail";
+import BookDetail from "../BookDetail/Bookdetail";
 import Dashboard from "../Dashboard/Dashboard";
 import NotFound from "../NotFound/NotFound";
 import Products from "../Products/Products";
@@ -12,7 +12,7 @@ function RoutingComponent() {
     <Routes>
       <Route path="/" element={<Dashboard />} />
       <Route path="/books" element={<Products />} />
-      <Route path="/books/:id" element={<BookDetail />} />
+      <Route path="/bookDetail/:id" element={<BookDetail />} />
       <Route path="/notfound" element={<NotFound />} />
       <Route path="/login" element={<SignIn />} />
       <Route path="/thankyou" element={<Thankyou />} />

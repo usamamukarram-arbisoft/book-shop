@@ -12,9 +12,10 @@ const ProductCard = ({ product, setOpenDialog }: ProductCardProps) => {
 
   const dispatch = useDispatch();
   const handleGoToDetails = () => {
-    navigate(`/books/${product.bookId}`, { state: { product } });
+    navigate(`/bookDetail/${product.bookId}`, { state: { product } });
   };
-  const handleAddToCart = () => {
+  const handleAddToCart = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.stopPropagation();
     if (product.available_books === 0) {
       setOpenDialog(true);
     } else {
@@ -22,7 +23,11 @@ const ProductCard = ({ product, setOpenDialog }: ProductCardProps) => {
     }
   };
   return (
-    <div className="col-md-4 mb-4">
+    <div
+      className="col-md-4 mb-4 "
+      style={{ cursor: "pointer" }}
+      onClick={handleGoToDetails}
+    >
       <div className="featured-product-card">
         <img className="featured-product-image" src={product.image_url} />
         <div className="featured-product-details">
@@ -38,9 +43,7 @@ const ProductCard = ({ product, setOpenDialog }: ProductCardProps) => {
           </h6>
           <p className="mb-3">{product.description}</p>
           <div className="d-flex justify-content-between  checkout align-items-center">
-            <a className="btn btn-primary me-3" onClick={handleGoToDetails}>
-              {Messages.productCard.viewDetails.value}
-            </a>
+            <span className="h5 mb-0">${product.price_usd}</span>
             <a className="btn btn-primary" onClick={handleAddToCart}>
               {Messages.productCard.addToCart.value}
             </a>

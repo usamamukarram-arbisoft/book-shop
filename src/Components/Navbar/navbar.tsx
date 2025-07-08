@@ -9,6 +9,7 @@ import type { MenuItem } from "../../Types/Types";
 import { menus } from "../../Utility/CommonConstants";
 import { Messages } from "../../Utility/CommonMessages";
 import { openDrawer, selectTotalItems } from "../AddToCart/AddtoCartslice";
+import Search from "../Search/Search";
 import { logout } from "../SignIn/SinginSlice";
 const Navbar = () => {
   const location = useLocation().pathname;
@@ -31,37 +32,38 @@ const Navbar = () => {
     );
   };
   return (
-    <ul className="nav justify-content-end align-items-center">
-      {menus.map((menu, index) => {
-        if (menu.link === "/login" && !user) {
-          return renderLinks(menu, index);
-        }
-        if (menu.link !== "/login") {
-          return renderLinks(menu, index);
-        }
-      })}
+    <nav className="navbar">
+      <div className="container-fluid d-flex justify-content-between align-items-center w-100">
+        <Search />
 
-      <li className="nav-item">
-        <a className="nav-link d-flex">
-          <i className="bi bi-cart-plus icon-size" onClick={cartDetails} />
-          <Badge className="badge-size" bg="danger">
-            {itemCounts}
-          </Badge>
-        </a>
-      </li>
-      {user && (
-        <li className="nav-item">
-          <a
-            className="nav-link d-flex"
-            onClick={() => {
-              dispatch(logout());
-            }}
-          >
-            {Messages.menu.Hi.value} {user?.username}
-          </a>
-        </li>
-      )}
-    </ul>
+        <ul className="navbar-nav ms-auto d-flex flex-row align-items-center gap-3">
+          {menus.map((menu, index) => {
+            if (menu.link === "/login" && !user) {
+              return renderLinks(menu, index);
+            }
+            if (menu.link !== "/login") {
+              return renderLinks(menu, index);
+            }
+          })}
+
+          <li className="nav-item">
+            <a className="nav-link d-flex">
+              <i className="bi bi-cart-plus icon-size" onClick={cartDetails} />
+              <Badge className="badge-size" bg="danger">
+                {itemCounts}
+              </Badge>
+            </a>
+          </li>
+          {user && (
+            <li className="nav-item">
+              <a className="nav-link d-flex" onClick={() => dispatch(logout())}>
+                {Messages.menu.Hi.value} {user?.username}
+              </a>
+            </li>
+          )}
+        </ul>
+      </div>
+    </nav>
   );
 };
 
