@@ -68,3 +68,8 @@ export type MenuItem = {
   name: string;
   link: string;
 };
+
+export interface SimilarProductsProps {
+  similarProducts: Books[];
+  setOpenDialog: (open: boolean) => void;
+}

@@ -1,31 +1,36 @@
 import "./BookDetails.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 import type { RootState } from "../../Store/Store";
-import type { Books } from "../../Types/Types";
+import { ROUTES } from "../../Utility/CommonConstants";
 import { Messages } from "../../Utility/CommonMessages";
 import { addToCart } from "../AddToCart/AddtoCartslice";
 import CommonConfirmation from "../CommonConfirmationModal/CommonConfirmation";
-import ProductCard from "../ProductCard/ProductCard";
+import { filterProducts } from "../Products/ProductsSlice";
+import SimilarProducts from "../SimilarProducts/SimilarProducts";
 
 const BookDetail = () => {
   const location = useLocation().state;
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [openDialog, setOpenDialog] = useState(false);
-  const items = useSelector((state: RootState) => state.product.items);
-  const similarBooks = items.filter(
-    (book: Books) =>
-      book.category === location?.product?.category &&
-      book.bookId !== location?.product?.bookId
+
+  useEffect(() => {
+    if (location?.product) {
+      dispatch(filterProducts(location.product));
+    }
+  }, [location?.product]);
+
+  const similarBooks = useSelector(
+    (state: RootState) => state.product.filterItems
   );
 
   const handleBack = () => {
-    navigate(`/`);
+    navigate(ROUTES.HOME);
   };
-  const dispatch = useDispatch();
 
   const book = location?.product;
   const handleAddToCart = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -43,7 +48,7 @@ const BookDetail = () => {
     <>
       <div className="container mt-5">
         <div className="row">
-          <div className="col-md-6 mb-4" style={{ height: "400px" }}>
+          <div className="col-md-6 mb-4 h-400px">
             <div className="card img-card ">
               <img
                 src={book.image_url}
@@ -92,18 +97,11 @@ const BookDetail = () => {
           </div>
         </div>
       </div>
-      <div className="container mt-5 ">
-        <h2 className="mb-4">{Messages.productDetails.similarBooks.value}</h2>
-        <div className="row justify-content-center">
-          {similarBooks.slice(0, 3).map((product: Books) => (
-            // <div> {product.title} </div>
-            <ProductCard
-              key={product.bookId}
-              product={product}
-              setOpenDialog={setOpenDialog}
-            />
-          ))}
-        </div>
+      <div>
+        <SimilarProducts
+          similarProducts={similarBooks}
+          setOpenDialog={setOpenDialog}
+        />
       </div>
       <CommonConfirmation
         openDialog={openDialog}

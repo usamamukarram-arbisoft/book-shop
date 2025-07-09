@@ -28,7 +28,6 @@ const AddToCartSlice = createSlice({
             existingItem.price_usd * existingItem.quantity;
         }
       } else {
-        // newItem.totalPrice = newItem.price_usd;
         state.items.push({
           ...newItem,
           quantity: 1,

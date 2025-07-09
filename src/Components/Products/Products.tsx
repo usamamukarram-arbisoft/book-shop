@@ -1,4 +1,5 @@
 import "./products.css";
+import "../../App.css";
 
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -72,10 +73,7 @@ const Products = () => {
           />
         </>
       ) : (
-        <div
-          className="d-flex justify-content-center align-items-center"
-          style={{ minHeight: "700px" }}
-        >
+        <div className="d-flex justify-content-center align-items-center h-700px">
           <SpinnerComponent />
         </div>
       )}

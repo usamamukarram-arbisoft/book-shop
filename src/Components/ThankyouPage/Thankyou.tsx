@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+import { ROUTES } from "../../Utility/CommonConstants";
 import { Messages } from "../../Utility/CommonMessages";
 
 const Thankyou = () => {
@@ -26,7 +27,7 @@ const Thankyou = () => {
           <div className="text-start mb-4">
             <a
               onClick={() => {
-                navigate("/books");
+                navigate(ROUTES.BOOKS);
               }}
               className="btn btn-outline-brown"
             >

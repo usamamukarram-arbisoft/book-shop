@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import type { ProductCardProps } from "../../Types/Types";
+import { ROUTES } from "../../Utility/CommonConstants";
 import { Messages } from "../../Utility/CommonMessages";
 import { addToCart } from "../AddToCart/AddtoCartslice";
 
@@ -12,7 +13,7 @@ const ProductCard = ({ product, setOpenDialog }: ProductCardProps) => {
 
   const dispatch = useDispatch();
   const handleGoToDetails = () => {
-    navigate(`/bookDetail/${product.bookId}`, { state: { product } });
+    navigate(`${ROUTES.BOOK_DETAIL}/${product.bookId}`, { state: { product } });
   };
   const handleAddToCart = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.stopPropagation();
@@ -23,11 +24,7 @@ const ProductCard = ({ product, setOpenDialog }: ProductCardProps) => {
     }
   };
   return (
-    <div
-      className="col-md-4 mb-4 "
-      style={{ cursor: "pointer" }}
-      onClick={handleGoToDetails}
-    >
+    <div className="col-md-4 mb-4 cursor " onClick={handleGoToDetails}>
       <div className="featured-product-card">
         <img className="featured-product-image" src={product.image_url} />
         <div className="featured-product-details">

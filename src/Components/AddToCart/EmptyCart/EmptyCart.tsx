@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+import { ROUTES } from "../../../Utility/CommonConstants";
 import { Messages } from "../../../Utility/CommonMessages";
 
 function EmptyCart() {
@@ -16,7 +17,7 @@ function EmptyCart() {
           <p className="mt-4 mb-5">{Messages.emptyCart.emptyCartTexy.value}</p>
           <a
             onClick={() => {
-              navigate("/books");
+              navigate(ROUTES.BOOKS);
             }}
             className="btn btn-light fw-semibold rounded px-4 py-2 custom-btn"
           >

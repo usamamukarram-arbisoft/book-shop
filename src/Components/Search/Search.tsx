@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 
+import { ROUTES } from "../../Utility/CommonConstants";
 import { clearSearchQuery, setSearchQuery } from "./SearchSlice";
 
 const Search = () => {
@@ -26,7 +27,7 @@ const Search = () => {
   }, [location]);
   const searchQuery = (e: React.FormEvent<HTMLFormElement>) => {
     if (location !== "/books") {
-      navigate("/books");
+      navigate(ROUTES.BOOKS);
     }
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
@@ -51,10 +52,7 @@ const Search = () => {
     }
   };
   return (
-    <div
-      className="position-absolute start-50 translate-middle-x"
-      style={{ width: "400px" }}
-    >
+    <div className="position-absolute start-50 translate-middle-x w-400px">
       <form className="d-flex" onSubmit={searchQuery}>
         <div className="input-group">
           <input
