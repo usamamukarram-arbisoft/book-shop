@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import type { RootState } from "../../Store/Store";
 import { loginRequest } from "../../Utility/Api";
+import { ROUTES } from "../../Utility/CommonConstants";
 import { Messages } from "../../Utility/CommonMessages";
 import { loginUser } from "./SinginSlice";
 
@@ -17,7 +18,7 @@ const SignIn = () => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigate("/books");
+      navigate(ROUTES.BOOKS);
     }
   }, [isLoggedIn]);
   const logIn = (event: React.FormEvent<HTMLFormElement>) => {

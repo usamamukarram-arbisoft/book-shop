@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import type { RootState } from "../../Store/Store";
+import { ROUTES } from "../../Utility/CommonConstants";
 import { Messages } from "../../Utility/CommonMessages";
 import CommonConfirmation from "../CommonConfirmationModal/CommonConfirmation";
 import { clearCart, closeDrawer } from "./AddtoCartslice";
@@ -32,11 +33,11 @@ const AddToCart = () => {
     dispatch(closeDrawer());
     dispatch(clearCart());
     setOpenDialog(false);
-    navigate(`/thankyou`);
+    navigate(ROUTES.THANK_YOU);
   };
   const goToCheckout = () => {
     if (!isLoggedIn) {
-      navigate("/login");
+      navigate(ROUTES.LOGIN);
       dispatch(closeDrawer());
       return;
     }
@@ -81,7 +82,7 @@ const AddToCart = () => {
                     <a
                       className="btn btn-outline-brown"
                       onClick={() => {
-                        navigate("/books");
+                        navigate(ROUTES.BOOKS);
                         dispatch(closeDrawer());
                       }}
                     >

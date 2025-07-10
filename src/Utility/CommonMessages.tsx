@@ -14,6 +14,10 @@ export const Messages = {
     genre: { key: ".productDetails.genre", value: "Genre" },
     price: { key: ".productDetails.price", value: "Price" },
     quantity: { key: ".productDetails.quantity", value: "Available Quantity" },
+    similarBooks: {
+      key: ".productDetails.similarBooks",
+      value: "Similar Books",
+    },
   },
   notFound: {
     title: { key: ".notFound.title", value: "Oops! Page Not Found" },
@@ -64,6 +68,13 @@ export const Messages = {
     message: {
       key: "confirm.message",
       value: "This book is out of stock.",
+    },
+  },
+  noSearchResults: {
+    title: { key: "noSearchResults.title", value: "No Results Found" },
+    message: {
+      key: "noSearchResults.message",
+      value: "We couldn't find any books matching your search criteria.",
     },
   },
   SignIn: {
